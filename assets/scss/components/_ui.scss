@@ -42,56 +42,83 @@ body {
 			background-color: $palepink;
 			.controls {
 				.top {
+					display: block;
 					.sections {
+						display: flex;
+						justify-content: space-between;
+						padding: 25px 50px 0;
 						.section {
 							.section_link {
-								
+								a {
+
+								}
 							}
 						}
 					}
 					.categs {
+						padding: 50px;
 						.categs_grid {
+							display: grid;
+							grid-template-columns: repeat(4, 1fr);
+							grid-row-gap: 1em;
 							.categ {
-								
+								margin: 0 auto;
+								border-radius: 100%;
+								width: 65px;
+								height: 65px;
+								position: relative;
+								transition: transform ease 0.2s, box-shadow ease 0.1s;
+								cursor: pointer;
+								&:hover {
+									transform: scale(1.1);
+									box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
+								}
+								img {
+									position: absolute;
+									width: 100%;
+									height: auto;
+									border-radius: 100%;
+
+								}
 							}
 
 						}
 					}
 				}
 
-			.bottom {
-				.options {
-					.options_inner {
-						.opt {
-
-						}
-					}
-				}
-				.nav {
-					.nav_inner {
-						.nav_btn {
-							&.prev {
-
-							}
-
-							&.next {
-
-							}
-							&.disabled {
-
-							}
-						}
-						.opt-colors_toggle {
-							&.variants_active {
-
-							}
-							&.colors_active {
+				.bottom {
+					.options {
+						.options_inner {
+							.opt {
 
 							}
 						}
 					}
+					.nav {
+						.nav_inner {
+							.nav_btn {
+								&.prev {
+
+								}
+
+								&.next {
+
+								}
+								&.disabled {
+
+								}
+							}
+							.opt-colors_toggle {
+								&.variants_active {
+
+								}
+								&.colors_active {
+
+								}
+							}
+						}
+					}
 				}
-			}
 
 			}
 		}
