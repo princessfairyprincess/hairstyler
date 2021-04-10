@@ -2,22 +2,22 @@
 
 $pink: #db8fa4;
 $palepink: #fae1e8;
+$pinkbluegradient: radial-gradient(circle, rgba(255,224,238,1) 0%, rgba(217,209,247,1) 100%);
 
 body {
-	background-color: $pink;
-	padding: 150px 0;
+	background: $pinkbluegradient;
+	padding: 70px 0;
 	.main {
 		background-color: #fff;
 		margin: 0 auto;
-		max-width: 60vw;
-		min-height: 600px;
+		max-width: 70vw;
+		min-height: 700px;
 		display: flex;
 		flex-direction: row;
 		.left {
 			width: 50%;
 			position: relative;
 			.viewport {
-				position: absolute;
 				width: 100%;
 				height: 100%;
 				z-index: -1;

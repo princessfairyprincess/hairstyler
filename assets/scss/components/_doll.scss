@@ -1,0 +1,103 @@
+//==========DOLL============//
+
+.viewport_inner {
+	position: relative;
+	background-image: url('../doll/base/base-min.png');
+	height: 100%;
+	background-size: contain;
+   	background-repeat: no-repeat;
+    background-position: center;
+	
+	.dollpart {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-size: contain;
+   		background-repeat: no-repeat;
+    	background-position: center;
+
+		&.body {
+			&.body0 {
+				background-image: url('../doll/base/body/body0-min.png');
+			}
+		}
+
+		&.chest {
+			&.chest0 {
+				background-image: url('../doll/base/chest/chest0-min.png');
+			}
+		}
+
+		&.arm {
+			&.arm0 {
+				background-image: url('../doll/base/arm/arm0-min.png');
+			}
+		}
+
+		&.hand {
+			&.hand0 {
+				background-image: url('../doll/base/hand/hand0-min.png');
+			}
+		}
+
+		&.jawline {
+			&.jawline0 {
+				background-image: url('../doll/base/jawline/jawline0-min.png');
+			}
+		}
+
+		&.cheeks {
+			&.cheeks0 {
+				background-image: url('../doll/base/jawline/jawline0-min.png');
+			}
+		}
+
+		&.nose {
+			&.nose0 {
+				background-image: url('../doll/base/nose/nose0-min.png');
+			}
+		}
+
+		&.browbone {
+			&.browbone0 {
+				background-image: url('../doll/base/browbone/browbone0-min.png');
+			}
+		}
+
+		&.brows {
+			&.brows0 {
+				background-image: url('../doll/base/brows/brows0-min.png');
+			}
+		}
+
+		&.browhairs {
+			&.browhairs0 {
+				background-image: url('../doll/base/browhairs/browhairs0-min.png');
+			}
+		}
+
+		&.eyeballs {
+			&.eyeballs0 {
+				background-image: url('../doll/base/eyeballs/eyeballs0-min.png');
+			}
+		}
+
+		&.eyelids {
+			&.eyelids0 {
+				background-image: url('../doll/base/eyelids/eyelids0-min.png');
+			}
+		}
+
+		&.mouth {
+			&.mouth0 {
+				background-image: url('../doll/base/mouth/mouth0-min.png');
+			}
+		}
+
+		&.mouthlips {
+			&.mouthlips0 {
+				background-image: url('../doll/base/mouthlips/mouthlips0-min.png');
+			}
+		}
+	}
+}
