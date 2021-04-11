@@ -23,6 +23,11 @@ $ease: all ease 0.2s; //transition
 
 $euphoria: 'euphoria_scriptregular', sans-serif;
 
+//Global Classes
+.hide {
+	display: none;
+}
+
 body {
 	background: radial-gradient(circle, #ffe0ee 0%, #d9d1f7 100%);
     margin: 2em;
@@ -76,13 +81,18 @@ body {
 		}
 		.right {
 			width: 64%;
+			overflow: hidden;
 			border-radius: 50px;
     		box-shadow: -2px -2px 15px rgba(255, 255, 255, 70%), 3px 3px 20px rgba(0, 0, 0, 10%);
    			background: rgb(250,225,232);
     		background: linear-gradient(311deg, rgba(250,225,232,0.6) 0%, rgba(255,255,255,0.7) 100%);
 			.controls {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
 				.top {
 					display: block;
+					height: fit-content;
 					.sections {
 						display: flex;
 						justify-content: space-between;
@@ -115,13 +125,14 @@ body {
 						.categs_grid {
 							display: grid;
 							grid-template-columns: repeat(6, 1fr);
-							grid-row-gap: 1em;
+							grid-row-gap: 0.67em;
 							.categ {
 								margin: 0 auto;
 								border-radius: 100%;
-								width: 85px;
-								height: 85px;
+								width: 75px;
+								height: 75px;
 								position: relative;
+								background-color: white;
 								transition: $ease;
 								cursor: pointer;
 								&:hover {
@@ -142,6 +153,8 @@ body {
 				}
 
 				.bottom {
+					height: -webkit-fill-available;
+					background-color: rgba(255, 148, 204, 0.3);
 					.options {
 						.options_inner {
 							.opt {
