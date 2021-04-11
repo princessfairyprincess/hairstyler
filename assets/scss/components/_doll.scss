@@ -2,9 +2,8 @@
 
 .viewport_inner {
 	position: relative;
-	background-image: url('../doll/base/base-min.png');
 	height: 100%;
-	background-size: contain;
+	background-size: cover;
    	background-repeat: no-repeat;
     background-position: center;
 	
@@ -12,9 +11,36 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background-size: contain;
+		background-size: cover;
    		background-repeat: no-repeat;
     	background-position: center;
+
+    	&.bg {
+    		.colour {
+    			height: 100%;
+    			position: relative;
+    			&.pink {
+    				background: radial-gradient(100% 60%, rgba(255,223,248,1) 0%, rgba(208,82,179,1) 100%)
+    			}
+    		}
+    		.texture {
+    			height: 100%;
+    			position: absolute;
+    			width: 100%;
+    			top: 0;
+    			left: 0;
+    			mix-blend-mode: overlay;
+
+    			&.texture0 {
+    				background-image: url('../doll/base/bg/bgtexture0.jpg');
+    			
+    			}
+    		}
+    	}
+
+    	&.dollbase {
+    		background-image: url('../doll/base/base-min.png');
+    	}
 
 		&.body {
 			&.body0 {
@@ -48,7 +74,7 @@
 
 		&.cheeks {
 			&.cheeks0 {
-				background-image: url('../doll/base/jawline/jawline0-min.png');
+				background-image: url('../doll/base/cheeks/cheeks0-min.png');
 			}
 		}
 

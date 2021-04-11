@@ -1,26 +1,63 @@
 /*========== UI ============*/
 
-$pink: #db8fa4;
+//Colours
+
+$pink: #ff94cc;
 $palepink: #fae1e8;
+$deeppink: #d052b3;
 $pinkbluegradient: radial-gradient(circle, rgba(255,224,238,1) 0%, rgba(217,209,247,1) 100%);
 
+//Decorations and Effects
+$glow:  0 0 6px rgba(255,255,255,0.5); //box-shadow
+$hovergrow: scale(1.1); //transform
+$ease: all ease 0.2s; //transition
+
+//Fonts
+@font-face {
+    font-family: 'euphoria_scriptregular';
+    src: url('../fonts/euphoriascript/euphoriascript-regular-webfont.woff2') format('woff2'),
+         url('../fonts/euphoriascript/euphoriascript-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$euphoria: 'euphoria_scriptregular', sans-serif;
+
 body {
-	background: $pinkbluegradient;
-	padding: 70px 0;
+	background: radial-gradient(circle, #ffe0ee 0%, #d9d1f7 100%);
+    margin: 2em;
+    box-sizing: border-box;
+    //padding-bottom: 56.25%;
+    position: relative;
+    font-family: $euphoria;
 	.main {
-		background-color: #fff;
+		//background-color: #fff;
 		margin: 0 auto;
-		max-width: 70vw;
-		min-height: 700px;
-		display: flex;
-		flex-direction: row;
+		max-width: 75vw;
+		min-height: 90vh;
+    	display: flex;
+    	flex-direction: row;
+    	box-sizing: border-box;
 		.left {
-			width: 50%;
+			width: 36%;
 			position: relative;
+			margin-right: 15px;
+			background-color: white;
+			padding-bottom: 56.25%;
+			box-sizing: border-box;
+			border-radius: 50px;
+    		box-shadow: -2px -2px 15px rgba(255, 255, 255, 70%), 3px 3px 20px rgba(0, 0, 0, 10%);
+
 			.viewport {
 				width: 100%;
 				height: 100%;
-				z-index: -1;
+				//z-index: -1;
+				position: absolute;
+				top: 0;
+				left: 0;
+			    border-radius: 50px;
+    			overflow: hidden;
+
 			}
 			.links {
 				display: flex;
@@ -38,8 +75,11 @@ body {
 			}
 		}
 		.right {
-			width: 50%;
-			background-color: $palepink;
+			width: 64%;
+			border-radius: 50px;
+    		box-shadow: -2px -2px 15px rgba(255, 255, 255, 70%), 3px 3px 20px rgba(0, 0, 0, 10%);
+   			background: rgb(250,225,232);
+    		background: linear-gradient(311deg, rgba(250,225,232,0.6) 0%, rgba(255,255,255,0.7) 100%);
 			.controls {
 				.top {
 					display: block;
@@ -49,8 +89,23 @@ body {
 						padding: 25px 50px 0;
 						.section {
 							.section_link {
-								a {
+								background-color: $deeppink;
+    							padding: 1em 2em;
+    							border-radius: 100%;
+    							transition: $ease;
+    							&.active {
+    								background-color: $pink;
+    								box-shadow: 0 0 10px rgba(255, 148, 204, 0.7), 1px 2px 4px rgba(0, 0, 0, 0.15);
+    							}
 
+    							&:hover {
+    								transform: $hovergrow;
+    							}
+								a {
+									font-size: 36px;
+									line-height: 40px;
+									text-decoration: none;
+									color: white;
 								}
 							}
 						}
@@ -59,18 +114,18 @@ body {
 						padding: 50px;
 						.categs_grid {
 							display: grid;
-							grid-template-columns: repeat(4, 1fr);
+							grid-template-columns: repeat(6, 1fr);
 							grid-row-gap: 1em;
 							.categ {
 								margin: 0 auto;
 								border-radius: 100%;
-								width: 65px;
-								height: 65px;
+								width: 85px;
+								height: 85px;
 								position: relative;
-								transition: transform ease 0.2s, box-shadow ease 0.1s;
+								transition: $ease;
 								cursor: pointer;
 								&:hover {
-									transform: scale(1.1);
+									transform: $hovergrow;
 									box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
 								}
 								img {
