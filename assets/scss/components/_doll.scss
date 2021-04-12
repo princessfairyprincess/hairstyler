@@ -125,5 +125,16 @@
 				background-image: url('../doll/base/mouthlips/mouthlips0-min.png');
 			}
 		}
+
+		&.headwrap {
+			background-image: url('../doll/base/headwrap/headtowel-min.png');
+		}
+
+		&.shirt {
+			&.shirt-body0chest0 {
+				background-image: url('../doll/base/shirt/shirt-body0chest0-min.png');
+
+			}
+		} 
 	}
 }
