@@ -6,6 +6,11 @@
 	<link rel="stylesheet" href="assets/scss/styles.css"/>
 </head>
 <body>
+	<div class="background-vid">
+		<video autoplay loop muted id='the_bg'>
+			<source src="assets/img/bg/FlyingElves.webm" type="video/webm">
+		</video>
+	</div>
 	<section class="main">
 		<div class="left">
 			<div class="viewport">
@@ -211,9 +216,23 @@
 					</div>
 					<div class="nav">
 						<div class="nav_inner">
-							<div class="nav_btn prev"></div>
-							<div class="opt-colours_toggle variants_active"></div>
-							<div class="nav_btn next"></div>
+							<div class="nav_btn prev disabled">
+								<a href=#>←</a>
+							</div>
+							<div class="opt_toggle variants_active">
+								<div class="toggler_type toggler_type_opts">
+									Options
+								</div>
+								<div class="toggler">
+									<a class="toggler_inner" href="#"></a>
+								</div>
+								<div class="toggler_type toggler_type_colours">
+									Colours
+								</div>
+							</div>
+							<div class="nav_btn next">
+								<a href=#>→</a>
+							</div>
 						</div>
 					</div>
 				</div>
