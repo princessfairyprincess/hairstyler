@@ -4,43 +4,43 @@
 	position: relative;
 	height: 100%;
 	background-size: cover;
-   	background-repeat: no-repeat;
-    background-position: center;
+	background-repeat: no-repeat;
+	background-position: center;
 	
 	.dollpart {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		background-size: cover;
-   		background-repeat: no-repeat;
-    	background-position: center;
+		background-repeat: no-repeat;
+		background-position: center;
 
-    	&.bg {
-    		.colour {
-    			height: 100%;
-    			position: relative;
-    			&.pink {
-    				background: radial-gradient(100% 60%, rgba(255,223,248,1) 0%, rgba(208,82,179,1) 100%)
-    			}
-    		}
-    		.texture {
-    			height: 100%;
-    			position: absolute;
-    			width: 100%;
-    			top: 0;
-    			left: 0;
-    			mix-blend-mode: overlay;
+		&.bg {
+			.colour {
+				height: 100%;
+				position: relative;
+				&.pink {
+					background: radial-gradient(100% 60%, rgba(255,223,248,1) 0%, rgba(208,82,179,1) 100%)
+				}
+			}
+			.texture {
+				height: 100%;
+				position: absolute;
+				width: 100%;
+				top: 0;
+				left: 0;
+				mix-blend-mode: overlay;
 
-    			&.texture0 {
-    				background-image: url('../doll/base/bg/bgtexture0.jpg');
-    			
-    			}
-    		}
-    	}
+				&.texture0 {
+					background-image: url('../doll/base/bg/bgtexture0.jpg');
 
-    	&.dollbase {
-    		background-image: url('../doll/base/base-min.png');
-    	}
+				}
+			}
+		}
+
+		&.dollbase {
+			background-image: url('../doll/base/base-min.png');
+		}
 
 		&.body {
 			&.body0 {
@@ -135,6 +135,60 @@
 				background-image: url('../doll/base/shirt/shirt-body0chest0-min.png');
 
 			}
-		} 
+		}
+
+		//skintones
+
+		.skin {
+			&.skin0 {
+				filter: brightness(0.4) hue-rotate(-21deg);
+			}
+
+			&.skin1 {
+				filter: brightness(0.44) hue-rotate(359deg);
+			}
+
+			&.skin2 {
+				filter: brightness(0.6) hue-rotate(337deg);
+			}
+
+			&.skin3 {
+				filter: brightness(0.62) hue-rotate(348deg);
+			}
+
+			&.skin4 {
+				filter: brightness(0.75) hue-rotate(340deg);
+			}
+
+			&.skin5 {
+				filter: brightness(0.77) hue-rotate(350deg);
+			}
+
+			&.skin6 {
+				filter: brightness(0.9) hue-rotate(345deg);
+			}
+
+			&.skin7 {
+				filter: unset;
+			}
+
+			&.skin8 {
+				filter: brightness(1.15) hue-rotate(-19deg) saturate(0.7);
+			}
+
+			&.skin9 {
+				filter: brightness(1.15) hue-rotate(352deg) saturate(0.8);
+			}
+
+			&.skin10 {
+				filter: brightness(1.4) hue-rotate(334deg) saturate(0.6);
+			}
+
+			&.skin11 {
+				filter: brightness(1.4) hue-rotate(344deg) saturate(0.5);
+			} 
+		}
+
+		
 	}
 }

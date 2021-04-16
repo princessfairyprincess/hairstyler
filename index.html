@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Hairstyler Project - v0.1</title>
 	<link rel="stylesheet" href="assets/scss/styles.css"/>
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<div class="background-vid">
@@ -14,26 +15,28 @@
 	<section class="main">
 		<div class="left">
 			<div class="viewport">
+				<canvas id="viewportCanvas"></canvas>
 				<div class="viewport_inner">
 					<div class="dollpart bg">
 						<div class="colour pink"></div>
 						<div class="texture texture0"></div>
 					</div>
-					<div class="dollpart skin skinmid skinwarm dollbase"></div>
-					<div class="dollpart body skin skinmid skinwarm body0"></div>
-					<div class="dollpart body skin skinmid skinwarm body0"></div>
-					<div class="dollpart chest skin skinmid skinwarm chest0"></div>
-					<div class="dollpart arm skin skinmid skinwarm arm0"></div>
-					<div class="dollpart hand skin skinmid skinwarm hand0"></div>
-					<div class="dollpart jawline skin skinmid skinwarm jawline0"></div>
-					<div class="dollpart cheeks skin skinmid skinwarm cheeks0"></div>
-					<div class="dollpart nose skin skinmid skinwarm nose0"></div>
-					<div class="dollpart browbone skin skinmid skinwarm browbone0"></div>
-					<div class="dollpart brows skin skinmid skinwarm brows0"></div>
+					<div class="dollpart skin skin7 dollbase"></div>
+					<div class="dollpart body skin skin7 body0"></div>
+					<div class="dollpart body skin skin7 body0"></div>
+					<div class="dollpart chest skin skin7 chest0"></div>
+					<div class="dollpart arm skin skin7 arm0"></div>
+					<div class="dollpart hand skin skin7 hand0"></div>
+					<div class="dollpart jawline skin skin7 jawline0"></div>
+					<div class="dollpart cheeks skin skin7 cheeks0"></div>
+					<div class="dollpart nose skin skin7 nose0"></div>
+					<div class="dollpart browbone skin skin7 browbone0"></div>
+					<div class="dollpart brows skin skin7 brows0"></div>
 					<div class="dollpart browhairs browhairs0"></div>
 					<div class="dollpart eyeballs eyeballs0"></div>
-					<div class="dollpart eyelids skin skinmid skinwarm eyelids0"></div>
-					<div class="dollpart mouth skin skinmid skinwarm mouth0"></div>
+					<div class="dollpart eyelids skin skin7 eyelids0"></div>
+					<div class="dollpart eyesmakeup eyemakeup0"></div>
+					<div class="dollpart mouth skin skin7 mouth0"></div>
 					<div class="dollpart mouthlips mouthlips0"></div>
 					<div class="dollpart extras">
 						<div class="dollpart extras stretchies"></div>
@@ -44,13 +47,16 @@
 					</div>
 					<div class="dollpart headwrap temp"></div>
 					<div class="dollpart shirt shirt-body0chest0"></div>
-					<div class="dollpart eyesmakeup eyemakeup0"></div>
 					<div class="dollpart lipsmakeup lipsmakeup0"></div>
 				</div>
 			</div>
 			<div class="links">
 				<div class="top">
-					<div class="save"></div>
+					<div class="save">
+						<button id="saveButton">
+							<img src="assets/img/svg/save.svg">
+						</button>
+					</div>
 				</div>
 				<div class="bottom">
 					<div class="watermark"></div>
@@ -153,7 +159,64 @@
 				</div>
 				<div class="bottom">
 					<div class="options_outer">
-						<div class="options body active">
+						<div class="options body active variants_active_view">
+							<div class="options_variants">
+								<div id="opt-body0" class="opt opt-body0 active">
+									<a href=#></a>
+								</div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
+							</div>
+							<div class="options_colours">
+								<div id="col-skin-0" class="col col-skin-0">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-1" class="col col-skin-1">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-2" class="col col-skin-2">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-3" class="col col-skin-3">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-4" class="col col-skin-4">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-5" class="col col-skin-5">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-6" class="col col-skin-6">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-7" class="col col-skin-7">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-8" class="col col-skin-8">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-9" class="col col-skin-9">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-10" class="col col-skin-10">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-11" class="col col-skin-11">
+									<a href=#></a>
+								</div>
+							</div>
+						</div>
+						<div class="options body hide">
 							<div class="options_variants">
 								<div id="opt-body0" class="opt opt-body0 active">
 									<a href=#></a>
@@ -190,57 +253,96 @@
 							</div>
 						</div>
 						<div class="options body hide">
-							<div class="options_inner">
-								<div class="opt">
-									
+							<div class="options_variants">
+								<div id="opt-body0" class="opt opt-body0 active">
+									<a href=#></a>
 								</div>
-								<div class="opt"></div>
-								<div class="opt"></div>
-								<div class="opt"></div>
-								<div class="opt"></div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
+							</div>
+							<div class="options_colours hide">
+								<div id="opt-body0" class="opt opt-body0">
+									<a href=#></a>
+								</div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
 							</div>
 						</div>
 						<div class="options body hide">
-							<div class="options_inner">
-								<div class="opt">
-									
+							<div class="options_variants">
+								<div id="opt-body0" class="opt opt-body0 active">
+									<a href=#></a>
 								</div>
-								<div class="opt"></div>
-								<div class="opt"></div>
-								<div class="opt"></div>
-								<div class="opt"></div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
 							</div>
-						</div>
-						<div class="options body hide">
-							<div class="options_inner">
-								<div class="opt">
-									
+							<div class="options_colours hide">
+								<div id="opt-body0" class="opt opt-body0">
+									<a href=#></a>
 								</div>
-								<div class="opt"></div>
-								<div class="opt"></div>
-								<div class="opt"></div>
-								<div class="opt"></div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="nav">
 						<div class="nav_inner">
 							<div class="nav_btn prev disabled">
-								<a href=#>←</a>
+								<div>←</div>
 							</div>
-							<div class="opt_toggle variants_active">
+							<div id="optColState" class="opt_toggle variants_active">
 								<div class="toggler_type toggler_type_opts">
 									Options
 								</div>
 								<div class="toggler">
-									<a class="toggler_inner" href="#"></a>
+									<div id="togglerInner" class="toggler_inner" ></div>
 								</div>
 								<div class="toggler_type toggler_type_colours">
 									Colours
 								</div>
 							</div>
 							<div class="nav_btn next">
-								<a href=#>→</a>
+								<div href=#>→</div>
 							</div>
 						</div>
 					</div>

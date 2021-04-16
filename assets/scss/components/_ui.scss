@@ -15,18 +15,18 @@ $ease: all ease 0.2s; //transition
 
 //Fonts
 @font-face {
-    font-family: 'euphoria_scriptregular';
-    src: url('../fonts/euphoriascript/euphoriascript-regular-webfont.woff2') format('woff2'),
-         url('../fonts/euphoriascript/euphoriascript-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'euphoria_scriptregular';
+	src: url('../fonts/euphoriascript/euphoriascript-regular-webfont.woff2') format('woff2'),
+	url('../fonts/euphoriascript/euphoriascript-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 $euphoria: 'euphoria_scriptregular', sans-serif;
 
 //Global Classes
 .hide {
-	display: none;
+	display: none !important;
 }
 
 ::-webkit-scrollbar {
@@ -50,21 +50,21 @@ html {
 	    	position: fixed;
 	    	z-index: -1;
 	    	video {
-	    	    width: 100vw;
+	    		width: 100vw;
 	    		height: 100vh;
 	    		object-fit: cover;
 	    		opacity: 0.8;
 	    	}
 	    }
-		.main {
+	    .main {
 			//background-color: #fff;
 			margin: 0 auto 4em;
-			max-width: 75vw;
-			min-height: 90vh;
-	    	display: flex;
-	    	flex-direction: row;
-	    	box-sizing: border-box;
-	    	padding: 2em;
+			max-width: 1080px;
+			min-height: 825px;
+			display: flex;
+			flex-direction: row;
+			box-sizing: border-box;
+			padding: 2em;
 			.left {
 				width: 36%;
 				position: relative;
@@ -73,7 +73,15 @@ html {
 				padding-bottom: 56.25%;
 				box-sizing: border-box;
 				border-radius: 50px;
-	    		box-shadow: -2px -2px 15px rgba(255, 255, 255, 70%), 3px 3px 20px rgba(0, 0, 0, 10%);
+				box-shadow: -2px -2px 15px rgba(255, 255, 255, 70%), 3px 3px 20px rgba(0, 0, 0, 10%);
+
+				#viewportCanvas {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+				}
 
 				.viewport {
 					width: 100%;
@@ -82,8 +90,8 @@ html {
 					position: absolute;
 					top: 0;
 					left: 0;
-				    border-radius: 50px;
-	    			overflow: hidden;
+					border-radius: 50px;
+					overflow: hidden;
 
 				}
 				.links {
@@ -94,6 +102,25 @@ html {
 					.top {
 						display: flex;
 						justify-content: flex-end;
+						z-index: 1;
+						padding: 1em;
+						.save {
+							#saveButton {
+								background-color: rgba(255,255,255,0.7);
+								border-style: none;
+								width: 38px;
+								height: 38px;
+								box-sizing: box-sizing;
+								padding: 0.5em;
+								border-radius: 100%;
+								cursor: pointer;
+								box-shadow: -2px -2px 15px rgba(255, 255, 255, 70%), 3px 3px 20px rgba(0, 0, 0, 10%);
+								
+								&:focus {
+									outline: none;
+								}
+							}
+						}
 					}
 					.bottom {
 						display: flex;
@@ -105,9 +132,9 @@ html {
 				width: 64%;
 				overflow: hidden;
 				border-radius: 50px;
-	    		box-shadow: -2px -2px 15px rgba(255, 255, 255, 70%), 3px 3px 20px rgba(0, 0, 0, 10%);
-	   			background: rgb(250,225,232);
-	    		background: linear-gradient(311deg, rgba(250,225,232,0.6) 0%, rgba(255,255,255,0.7) 100%);
+				box-shadow: -2px -2px 15px rgba(255, 255, 255, 70%), 3px 3px 20px rgba(0, 0, 0, 10%);
+				background: rgb(250,225,232);
+				background: linear-gradient(311deg, rgba(250,225,232,0.6) 0%, rgba(255,255,255,0.7) 100%);
 				.controls {
 					display: flex;
 					flex-direction: column;
@@ -122,17 +149,17 @@ html {
 							.section {
 								.section_link {
 									background-color: $deeppink;
-	    							padding: 1em 2em;
-	    							border-radius: 100%;
-	    							transition: $ease;
-	    							&.active {
-	    								background-color: $pink;
-	    								box-shadow: 0 0 10px rgba(255, 148, 204, 0.7), 1px 2px 4px rgba(0, 0, 0, 0.15);
-	    							}
+									padding: 1em 2em;
+									border-radius: 100%;
+									transition: $ease;
+									&.active {
+										background-color: $pink;
+										box-shadow: 0 0 10px rgba(255, 148, 204, 0.7), 1px 2px 4px rgba(0, 0, 0, 0.15);
+									}
 
-	    							&:hover {
-	    								transform: $hovergrow;
-	    							}
+									&:hover {
+										transform: $hovergrow;
+									}
 									a {
 										font-size: 36px;
 										line-height: 40px;
@@ -181,102 +208,180 @@ html {
 					.bottom {
 						height: -webkit-fill-available;
 						background-color: rgba(255, 148, 204, 0.3);
-						.options {
-							padding: 50px;
-							.options_variants {
-								display: grid;
-								grid-template-columns: repeat(5, 1fr);
-								.opt {
-									width: 100px;
-									height: 93px;
-									background-color: white;
-									margin: 0 auto;
-									border-radius: 10px;
-									overflow: hidden;
-									transition: $ease;
+						.options_outer {
+							width: 100%;
+							.options {
+								padding: 50px;
+								width: 190%;
+								display: flex;
+								flex-direction: row;
+								box-sizing: border-box;
+								transition: transform ease 0.2s;
 
-									a {
-										width: 100%;
-										height: 100%;
-										display: block;
-										margin: 0;
-										padding: 0;
-										filter: hue-rotate(248deg) drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
-									}
+								&.variants_active_view {
+									transform: translateX(0);
+								}
 
-									&.active {
-										background-color: $lavender;
-										box-shadow: $glow;
-									}
+								&.colours_active_view {
+									transform: translateX(-50%);
+								}
 
-									&:hover {
-										transform: $hovergrow;
+								.options_variants {
+									display: grid;
+									grid-template-columns: repeat(5, 1fr);
+									margin-right: 6em;
+									width: 100%;
+									.opt {
+										width: 93px;
+										height: 93px;
+										background-color: white;
+										margin: 0 auto;
+										border-radius: 10px;
+										overflow: hidden;
+										transition: $ease;
+
+										a {
+											width: 100%;
+											height: 100%;
+											display: block;
+											margin: 0;
+											padding: 0;
+											filter: hue-rotate(248deg) drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+										}
+
+										&.active {
+											background-color: $lavender;
+											box-shadow: $glow;
+										}
+
+										&:hover {
+											transform: $hovergrow;
+										}
 									}
 								}
-							}
 
-							&.body {
-								.options_variants {
-									.opt {
-										a {
-											background-size: 105px;
-										    background-repeat: no-repeat;
-										    position: relative;
-										    background-position: bottom;
+								.options_colours {
+									display: grid;
+									grid-template-columns: repeat(6, 1fr);
+									grid-gap: 0.5em;
+									.col {
+										width: 76px;
+										height: 76px;
+										border-radius: 100%;
 
-											&:after {
-												position: absolute;
-												content: "";
-												display: block;
-												width: 100%;
-												height: 100%;
+										&.col-skin-0 {
+											background-color: #382722;
+										}
+
+										&.col-skin-1 {
+											background-color: #3d311c;
+										}
+
+										&.col-skin-2 {
+											background-color: #6e4837;
+										}
+
+										&.col-skin-3 {
+											background-color: #734e27;
+										}
+
+										&.col-skin-4 {
+											background-color: #a16a4f;
+										}
+
+										&.col-skin-5 {
+											background-color: #b3794d;
+										}
+
+										&.col-skin-6 {
+											background-color: #c99477;
+										}
+
+										&.col-skin-7 {
+											background-color: #c79461;
+										}
+
+										&.col-skin-8 {
+											background-color: #edad85;
+										}
+
+										&.col-skin-9 {
+											background-color: #ebbd88;
+										}
+
+										&.col-skin-10 {
+											background-color: #ffdecc;
+										}
+
+										&.col-skin-11 {
+											background-color: #ffe1bf;
+										}
+									}
+								}
+
+								&.body {
+									.options_variants {
+										.opt {
+											a {
 												background-size: 105px;
 												background-repeat: no-repeat;
+												position: relative;
 												background-position: bottom;
-											}
-										}
 
-										&.opt-body0 {
-											a {
-												background-image: url('../doll/base/body/body0-min.png');
 												&:after {
-													background-image: url('../doll/base/arm/arm0-min.png')
+													position: absolute;
+													content: "";
+													display: block;
+													width: 100%;
+													height: 100%;
+													background-size: 105px;
+													background-repeat: no-repeat;
+													background-position: bottom;
 												}
 											}
-										}
-										&.opt-body1 {
-											a {
-												background-image: url('../doll/base/body/body1-min.png');
-												&:after {
-													background-image: url('../doll/base/arm/arm1-min.png');
-												
+
+											&.opt-body0 {
+												a {
+													background-image: url('../doll/base/body/body0-min.png');
+													&:after {
+														background-image: url('../doll/base/arm/arm0-min.png')
+													}
 												}
 											}
-										}
-										&.opt-body2 {
-											a {
-												background-image: url('../doll/base/body/body2-min.png');
-												&:after {
-													background-image: url('../doll/base/arm/arm2-min.png');
-													
+											&.opt-body1 {
+												a {
+													background-image: url('../doll/base/body/body1-min.png');
+													&:after {
+														background-image: url('../doll/base/arm/arm1-min.png');
+
+													}
 												}
 											}
-										}
-										&.opt-body3 {
-											a {
-												background-image: url('../doll/base/body/body3-min.png');
-												&:after {
-													background-image: url('../doll/base/arm/arm3-min.png');
-													
+											&.opt-body2 {
+												a {
+													background-image: url('../doll/base/body/body2-min.png');
+													&:after {
+														background-image: url('../doll/base/arm/arm2-min.png');
+
+													}
 												}
 											}
-										}
-										&.opt-body4 {
-											a {
-												background-image: url('../doll/base/body/body4-min.png');
-												&:after {
-													background-image: url('../doll/base/arm/arm4-min.png');
-													
+											&.opt-body3 {
+												a {
+													background-image: url('../doll/base/body/body3-min.png');
+													&:after {
+														background-image: url('../doll/base/arm/arm3-min.png');
+
+													}
+												}
+											}
+											&.opt-body4 {
+												a {
+													background-image: url('../doll/base/body/body4-min.png');
+													&:after {
+														background-image: url('../doll/base/arm/arm4-min.png');
+
+													}
 												}
 											}
 										}
@@ -309,10 +414,11 @@ html {
 										transform: $hovergrow;
 									}
 
-									a {
+									div {
 										text-decoration: none;
 										color: white;
 										font-size: 30px;
+										cursor: pointer;
 									}
 									&.prev {
 
@@ -325,7 +431,7 @@ html {
 										opacity: 0.5;
 										transform: unset;
 
-										a {
+										div {
 											cursor: default;
 										}
 
@@ -340,6 +446,7 @@ html {
 										font-family: $euphoria;
 										color: $deeppink;
 										font-size: 22px;
+										transition: transform ease 0.2s;
 										&.toggler_type_opts {
 											margin-right: 10px;
 										}
@@ -348,7 +455,7 @@ html {
 										}
 									}
 									.toggler {
-										width: 75px;
+										width: 60px;
 										height: 40px;
 										padding: 2px 4px;
 										display: flex;
@@ -362,28 +469,36 @@ html {
 											height: 36px;
 											background-color: white;
 											border-radius: 100%;
+											cursor: pointer;
+											transition: transform ease 0.2s;
 										}
 									}
 									&.variants_active {
 										.toggler_type {
 											&.toggler_type_opts {
-												font-size: 26px;
+												//font-size: 26px;
+												transform: scale(1.2);
 												text-shadow: $glow;
 											}
 										}
 										.toggler {
-											justify-content: start;
+											.toggler_inner {
+												transform: translateX(0);
+											}
 										}
 									}
 									&.colors_active {
 										.toggler_type {
 											&.toggler_type_colours {
-												font-size: 26px;
+												//font-size: 26px;
+												transform: scale(1.2);
 												text-shadow: $glow;
 											}
 										}
 										.toggler {
-											justify-content: end;
+											.toggler_inner {
+												transform: translateX(24px);
+											}
 										}
 									}
 								}
