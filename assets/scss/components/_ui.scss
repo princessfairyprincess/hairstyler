@@ -206,6 +206,7 @@ html {
 					}
 
 					.bottom {
+						position: relative;
 						height: -webkit-fill-available;
 						background-color: rgba(255, 148, 204, 0.3);
 						.options_outer {
@@ -215,6 +216,7 @@ html {
 								width: 190%;
 								display: flex;
 								flex-direction: row;
+								align-items: center;
 								box-sizing: border-box;
 								transition: transform ease 0.2s;
 
@@ -272,7 +274,7 @@ html {
 										cursor: pointer;
 
 										&.active {
-											
+
 										}
 
 										&:hover {
@@ -403,13 +405,16 @@ html {
 							width: 100%;
 							padding: 0 50px 25px;
 							box-sizing: border-box;
+							
 							.nav_inner {
 								font-family: $euphoria;
 								display: flex;
 								box-sizing: border-box;
 								flex-direction: row;
-								justify-content: space-between;
+								justify-content: center;
 								.nav_btn {
+									position: absolute;
+									top: 35%;
 									background-color:  $pink;
 									border-radius: 100%;
 									padding: 5px;
@@ -431,11 +436,11 @@ html {
 										cursor: pointer;
 									}
 									&.prev {
-
+										left: 10px;
 									}
 
 									&.next {
-
+										right: 10px;
 									}
 									&.disabled {
 										opacity: 0.5;

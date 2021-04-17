@@ -6,11 +6,20 @@ $( document ).ready(function() {
 	const optViewer = $('.options');
 	const optColToggler = $('#togglerInner');
 	const optColState = $('#optColState');
+	const optNavBtns = $('.nav_btn');
 
 	optColToggler.click(function(){
 		optColState.toggleClass('variants_active colors_active');
 		optViewer.toggleClass('variants_active_view colours_active_view');
 	});
+
+	if ($(optViewer).hasClass('body')) {
+		console.log('this is body');
+		if ($(optViewer).hasClass('active')) {
+			console.log('body is active');
+			optNavBtns.addClass('hide');
+		}
+	}
 
 
 	//Change skin tone
