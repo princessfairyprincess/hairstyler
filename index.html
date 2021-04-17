@@ -4,14 +4,58 @@
 	<meta charset="utf-8">
 	<title>Hairstyler Project - v0.1</title>
 	<link rel="stylesheet" href="assets/scss/styles.css"/>
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+	<div class="background-vid">
+		<video autoplay loop muted id='the_bg'>
+			<source src="assets/img/bg/FlyingElves.webm" type="video/webm">
+		</video>
+	</div>
 	<section class="main">
 		<div class="left">
-			<div class="viewport"></div>
+			<div class="viewport">
+				<canvas id="viewportCanvas"></canvas>
+				<div class="viewport_inner">
+					<div class="dollpart bg">
+						<div class="colour pink"></div>
+						<div class="texture texture0"></div>
+					</div>
+					<div class="dollpart skin skin7 dollbase"></div>
+					<div class="dollpart body skin skin7 body0"></div>
+					<div class="dollpart chest skin skin7 chest0"></div>
+					<div class="dollpart arm skin skin7 arm0"></div>
+					<div class="dollpart hand skin skin7 hand0"></div>
+					<div class="dollpart jawline skin skin7 jawline0"></div>
+					<div class="dollpart cheeks skin skin7 cheeks0"></div>
+					<div class="dollpart nose skin skin7 nose0"></div>
+					<div class="dollpart browbone skin skin7 browbone0"></div>
+					<div class="dollpart brows skin skin7 brows0"></div>
+					<div class="dollpart browhairs browhairs0"></div>
+					<div class="dollpart eyeballs eyeballs0"></div>
+					<div class="dollpart eyelids skin skin7 eyelids0"></div>
+					<div class="dollpart eyesmakeup eyemakeup0"></div>
+					<div class="dollpart mouth skin skin7 mouth0"></div>
+					<div class="dollpart mouthlips mouthlips0"></div>
+					<div class="dollpart extras">
+						<div class="dollpart extras stretchies"></div>
+						<div class="dollpart extras vitiligo"></div>
+						<div class="dollpart extras freckles"></div>
+						<div class="dollpart extras beautymark"></div>
+						<div class="dollpart extras wrinkles"></div>
+					</div>
+					<div class="dollpart headwrap temp"></div>
+					<div class="dollpart shirt shirt-body0chest0"></div>
+					<div class="dollpart lipsmakeup lipsmakeup0"></div>
+				</div>
+			</div>
 			<div class="links">
 				<div class="top">
-					<div class="save"></div>
+					<div class="save">
+						<button id="saveButton">
+							<img src="assets/img/svg/save.svg">
+						</button>
+					</div>
 				</div>
 				<div class="bottom">
 					<div class="watermark"></div>
@@ -23,7 +67,7 @@
 				<div class="top">
 					<div class="sections">
 						<div class="section">
-							<div class="section_link">
+							<div class="section_link active">
 								<a href=#>
 									<span>Doll Customizer</span>
 								</a>
@@ -39,84 +83,266 @@
 					</div>
 					<div class="categs">
 						<div class="categs_grid">
-							<div class="categ">
+							<div id="categBody" class="categ active">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholdersbody.jpg">
+									<img src="assets/img/icons/doll_optsbody.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categBrowbone" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholdersbrowbone.jpg">
+									<img src="assets/img/icons/doll_optsbrowbone.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categBrows" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholdersbrows.jpg">
+									<img src="assets/img/icons/doll_optsbrows.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categCheeks" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholderscheeks.jpg">
+									<img src="assets/img/icons/doll_optscheeks.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categChest" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholderschest.jpg">
+									<img src="assets/img/icons/doll_optschest.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categEyes" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholderseyes.jpg">
+									<img src="assets/img/icons/doll_optseyes.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categHand" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholdershand.jpg">
+									<img src="assets/img/icons/doll_optshand.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categJawline" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholdersjawline.jpg">
+									<img src="assets/img/icons/doll_optsjawline.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categMouth" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholdersmouth.jpg">
+									<img src="assets/img/icons/doll_optsmouth.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categNose" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholdersnose.jpg">
+									<img src="assets/img/icons/doll_optsnose.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categBackground" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholdersbody.jpg">
+									<img src="assets/img/icons/doll_optsbackground.png">
 								</div>
 							</div>
-							<div class="categ">
+							<div id="categFeatures" class="categ">
 								<div class="categbg">
-									<img src="assets/img/placeholders/doll_opts_placeholdersbody.jpg">
+									<img src="assets/img/icons/doll_optsfeatures.png">
+								</div>
+							</div>
+							<div id="categEyeMakeup" class="categ">
+								<div class="categbg">
+									<img src="assets/img/icons/doll_optseyemakeup.png">
+								</div>
+							</div>
+							<div id="categLipMakeup" class="categ">
+								<div class="categbg">
+									<img src="assets/img/icons/doll_optslipmakeup.png">
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="bottom">
-					<div class="options">
-						<div class="options_inner">
-							<div class="opt"></div>
-							<div class="opt"></div>
-							<div class="opt"></div>
-							<div class="opt"></div>
-							<div class="opt"></div>
+					<div class="options_outer">
+						<div class="options body active variants_active_view">
+							<div class="options_variants">
+								<div id="opt-body0" class="opt opt-body0 active">
+									<a href=#></a>
+								</div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
+							</div>
+							<div class="options_colours">
+								<div id="col-skin-0" class="col col-skin-0">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-1" class="col col-skin-1">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-2" class="col col-skin-2">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-3" class="col col-skin-3">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-4" class="col col-skin-4">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-5" class="col col-skin-5">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-6" class="col col-skin-6">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-7" class="col col-skin-7">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-8" class="col col-skin-8">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-9" class="col col-skin-9">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-10" class="col col-skin-10">
+									<a href=#></a>
+								</div>
+								<div id="col-skin-11" class="col col-skin-11">
+									<a href=#></a>
+								</div>
+							</div>
+						</div>
+						<div class="options body hide">
+							<div class="options_variants">
+								<div id="opt-body0" class="opt opt-body0 active">
+									<a href=#></a>
+								</div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
+							</div>
+							<div class="options_colours hide">
+								<div id="opt-body0" class="opt opt-body0">
+									<a href=#></a>
+								</div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
+							</div>
+						</div>
+						<div class="options body hide">
+							<div class="options_variants">
+								<div id="opt-body0" class="opt opt-body0 active">
+									<a href=#></a>
+								</div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
+							</div>
+							<div class="options_colours hide">
+								<div id="opt-body0" class="opt opt-body0">
+									<a href=#></a>
+								</div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
+							</div>
+						</div>
+						<div class="options body hide">
+							<div class="options_variants">
+								<div id="opt-body0" class="opt opt-body0 active">
+									<a href=#></a>
+								</div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
+							</div>
+							<div class="options_colours hide">
+								<div id="opt-body0" class="opt opt-body0">
+									<a href=#></a>
+								</div>
+								<div id="opt-body1" class="opt opt-body1">
+									<a href=#></a>
+								</div>
+								<div id="opt-body2" class="opt opt-body2">
+									<a href=#></a>
+								</div>
+								<div id="opt-body3" class="opt opt-body3">
+									<a href=#></a>
+								</div>
+								<div id="opt-body4" class="opt opt-body4">
+									<a href=#></a>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="nav">
 						<div class="nav_inner">
-							<div class="nav_btn prev"></div>
-							<div class="opt-colours_toggle variants_active"></div>
-							<div class="nav_btn next"></div>
+							<div class="nav_btn prev disabled">
+								<div>←</div>
+							</div>
+							<div id="optColState" class="opt_toggle variants_active">
+								<div class="toggler_type toggler_type_opts">
+									Options
+								</div>
+								<div class="toggler">
+									<div id="togglerInner" class="toggler_inner" ></div>
+								</div>
+								<div class="toggler_type toggler_type_colours">
+									Colours
+								</div>
+							</div>
+							<div class="nav_btn next">
+								<div href=#>→</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -124,5 +350,5 @@
 		</div>
 	</section>
 </body>
-<script src="/js/common.js"></script>
+<script src="assets/js/common.js"></script>
 </html>
