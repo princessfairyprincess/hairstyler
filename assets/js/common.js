@@ -13,7 +13,30 @@ $( document ).ready(function() {
 	});
 
 
-	//
+	//Change skin tone
+	const skinOptsArray = $('.col');
+	changeSkinTone = function() {
+		var skin = $('.skin');
+
+		console.log(skinOptsArray[5]);
+		var foundInt;
+
+		var x;
+		for(x = 0; x <= 11; x++){
+			if(skinOptsArray[x] == this){
+				foundInt = x;
+			}
+		}
+		
+		var i;
+		for (i = 0; i <= 11; i++) {
+		
+			$('.skin').removeClass('skin'+[i]).addClass('skin'+foundInt);
+		}
+
+	}
+
+	$('.col').click(changeSkinTone);
  
 });
 
