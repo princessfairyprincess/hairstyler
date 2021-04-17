@@ -11,6 +11,9 @@ $( document ).ready(function() {
 		optColState.toggleClass('variants_active colors_active');
 		optViewer.toggleClass('variants_active_view colours_active_view');
 	});
+
+
+	//
  
 });
 

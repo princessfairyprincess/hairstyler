@@ -139,7 +139,8 @@
 
 		//skintones
 
-		.skin {
+		&.skin {
+			//transition: filter linear 0.1s;
 			&.skin0 {
 				filter: brightness(0.4) hue-rotate(-21deg);
 			}
