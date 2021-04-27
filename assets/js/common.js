@@ -23,21 +23,18 @@ $( document ).ready(function() {
 
 
 	//Change skin tone
-	const skinOptsArray = $('.col');
+	const skinOptsArray = $('.col-skin');
 	changeSkinTone = function() {
-		var skin = $('.skin');
-
-		console.log(skinOptsArray[5]);
-		var foundInt;
-
-		var x;
+		let skin = $('.skin');
+		let foundInt;
+		let x;
 		for(x = 0; x <= 11; x++){
 			if(skinOptsArray[x] == this){
 				foundInt = x;
 			}
 		}
 		
-		var i;
+		let i;
 		for (i = 0; i <= 11; i++) {
 		
 			$('.skin').removeClass('skin'+[i]).addClass('skin'+foundInt);
@@ -45,7 +42,32 @@ $( document ).ready(function() {
 
 	}
 
-	$('.col').click(changeSkinTone);
- 
+	$('.col-skin').click(changeSkinTone);
+
+
+ 	//change parts
+
+	const partsOptsBody = $('.opt-body');
+	changeVariant = function(part,object) {
+		let partOpt = '.'+part;
+		let foundInt;
+		let x;
+
+		for(x = 0; x <= 4; x++){
+			if(partsOptsBody[x] == object) {
+				foundInt = x;
+			}
+		}
+
+		let i;
+		for (i = 0; i<=4; i++) {
+			$(partOpt).removeClass(part+[i]).addClass(part+foundInt);
+		}
+	}
+
+	$('.opt-body').click(function() {
+		changeVariant('body',this);
+	});
+
 });
 
