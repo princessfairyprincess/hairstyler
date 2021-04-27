@@ -45,16 +45,16 @@ $( document ).ready(function() {
 	$('.col-skin').click(changeSkinTone);
 
 
- 	//change parts
+ 	//Change parts
 
-	const partsOptsBody = $('.opt-body');
-	changeVariant = function(part,object) {
+	changeVariant = function(partsgroup,part,object) {
+		let partsOptsArray = $('.'+partsgroup);
 		let partOpt = '.'+part;
 		let foundInt;
 		let x;
 
 		for(x = 0; x <= 4; x++){
-			if(partsOptsBody[x] == object) {
+			if(partsOptsArray[x] == object) {
 				foundInt = x;
 			}
 		}
@@ -62,11 +62,24 @@ $( document ).ready(function() {
 		let i;
 		for (i = 0; i<=4; i++) {
 			$(partOpt).removeClass(part+[i]).addClass(part+foundInt);
+
+			if ($(object).hasClass('opt-body')) {
+				$('.arm').removeClass('arm'+[i]).addClass('arm'+foundInt);
+				$('.shirt').removeClass('shirt-body'+[i]+'chest0').addClass('shirt-body'+foundInt+'chest0');
+			}
 		}
+
+		$(object).siblings().removeClass('active');
+		$(object).addClass('active');
+
 	}
 
 	$('.opt-body').click(function() {
-		changeVariant('body',this);
+		changeVariant('opt-body','body',this);
+	});
+
+	$('opt-eyes').click(function() {
+		changeVariant('opt-eyes','eyes',this);
 	});
 
 });
