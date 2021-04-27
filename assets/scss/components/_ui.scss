@@ -242,7 +242,7 @@ html {
 										overflow: hidden;
 										transition: $ease;
 
-										a {
+										.opt_inner {
 											width: 100%;
 											height: 100%;
 											display: block;
@@ -258,6 +258,7 @@ html {
 
 										&:hover {
 											transform: $hovergrow;
+											cursor: pointer;
 										}
 									}
 								}
@@ -334,7 +335,7 @@ html {
 								&.body {
 									.options_variants {
 										.opt {
-											a {
+											.opt_inner {
 												background-size: 105px;
 												background-repeat: no-repeat;
 												position: relative;
@@ -353,7 +354,7 @@ html {
 											}
 
 											&.opt-body0 {
-												a {
+												.opt_inner {
 													background-image: url('../doll/base/body/body0-min.png');
 													&:after {
 														background-image: url('../doll/base/arm/arm0-min.png')
@@ -361,7 +362,7 @@ html {
 												}
 											}
 											&.opt-body1 {
-												a {
+												.opt_inner {
 													background-image: url('../doll/base/body/body1-min.png');
 													&:after {
 														background-image: url('../doll/base/arm/arm1-min.png');
@@ -370,7 +371,7 @@ html {
 												}
 											}
 											&.opt-body2 {
-												a {
+												.opt_inner {
 													background-image: url('../doll/base/body/body2-min.png');
 													&:after {
 														background-image: url('../doll/base/arm/arm2-min.png');
@@ -379,7 +380,7 @@ html {
 												}
 											}
 											&.opt-body3 {
-												a {
+												.opt_inner {
 													background-image: url('../doll/base/body/body3-min.png');
 													&:after {
 														background-image: url('../doll/base/arm/arm3-min.png');
@@ -388,7 +389,7 @@ html {
 												}
 											}
 											&.opt-body4 {
-												a {
+												.opt_inner {
 													background-image: url('../doll/base/body/body4-min.png');
 													&:after {
 														background-image: url('../doll/base/arm/arm4-min.png');

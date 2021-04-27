@@ -23,21 +23,18 @@ $( document ).ready(function() {
 
 
 	//Change skin tone
-	const skinOptsArray = $('.col');
+	const skinOptsArray = $('.col-skin');
 	changeSkinTone = function() {
-		var skin = $('.skin');
-
-		console.log(skinOptsArray[5]);
-		var foundInt;
-
-		var x;
+		let skin = $('.skin');
+		let foundInt;
+		let x;
 		for(x = 0; x <= 11; x++){
 			if(skinOptsArray[x] == this){
 				foundInt = x;
 			}
 		}
 		
-		var i;
+		let i;
 		for (i = 0; i <= 11; i++) {
 		
 			$('.skin').removeClass('skin'+[i]).addClass('skin'+foundInt);
@@ -45,7 +42,45 @@ $( document ).ready(function() {
 
 	}
 
-	$('.col').click(changeSkinTone);
- 
+	$('.col-skin').click(changeSkinTone);
+
+
+ 	//Change parts
+
+	changeVariant = function(partsgroup,part,object) {
+		let partsOptsArray = $('.'+partsgroup);
+		let partOpt = '.'+part;
+		let foundInt;
+		let x;
+
+		for(x = 0; x <= 4; x++){
+			if(partsOptsArray[x] == object) {
+				foundInt = x;
+			}
+		}
+
+		let i;
+		for (i = 0; i<=4; i++) {
+			$(partOpt).removeClass(part+[i]).addClass(part+foundInt);
+
+			if ($(object).hasClass('opt-body')) {
+				$('.arm').removeClass('arm'+[i]).addClass('arm'+foundInt);
+				$('.shirt').removeClass('shirt-body'+[i]+'chest0').addClass('shirt-body'+foundInt+'chest0');
+			}
+		}
+
+		$(object).siblings().removeClass('active');
+		$(object).addClass('active');
+
+	}
+
+	$('.opt-body').click(function() {
+		changeVariant('opt-body','body',this);
+	});
+
+	$('opt-eyes').click(function() {
+		changeVariant('opt-eyes','eyes',this);
+	});
+
 });
 
