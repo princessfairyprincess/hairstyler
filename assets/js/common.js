@@ -14,9 +14,7 @@ $( document ).ready(function() {
 	});
 
 	if ($(optViewer).hasClass('body')) {
-		console.log('this is body');
 		if ($(optViewer).hasClass('active')) {
-			console.log('body is active');
 			optNavBtns.addClass('hide');
 		}
 	}
@@ -49,18 +47,19 @@ $( document ).ready(function() {
 
 	changeVariant = function(partsgroup,part,object) {
 		let partsOptsArray = $('.'+partsgroup);
+		let partOptsQuant = $(partsOptsArray).length - 1;
 		let partOpt = '.'+part;
 		let foundInt;
 		let x;
 
-		for(x = 0; x <= 4; x++){
+		for(x = 0; x <= partOptsQuant; x++){
 			if(partsOptsArray[x] == object) {
 				foundInt = x;
 			}
 		}
 
 		let i;
-		for (i = 0; i<=4; i++) {
+		for (i = 0; i<=partOptsQuant; i++) {
 			$(partOpt).removeClass(part+[i]).addClass(part+foundInt);
 
 			if ($(object).hasClass('opt-body')) {
@@ -78,9 +77,36 @@ $( document ).ready(function() {
 		changeVariant('opt-body','body',this);
 	});
 
+	$('.opt-browbone').click(function() {
+		changeVariant('opt-browbone', 'browbone', this);
+	});
+
 	$('opt-eyes').click(function() {
 		changeVariant('opt-eyes','eyes',this);
 	});
+
+
+	//Choose Category
+	changeCateg = function(categbutton,categoption) {
+		if (!$(categbutton).hasClass('active')) {
+			$(categbutton).addClass('active');
+			$(categbutton).siblings().removeClass('active');
+		}
+
+		let theOpts = $('.options.'+categoption);
+		$(theOpts).addClass('active variants_active_view').removeClass('hide');
+		$(theOpts).siblings().removeClass('active').addClass('hide');
+
+	}
+
+	$('#categBody').click(function() {
+		changeCateg(this,'body');
+	});
+
+	$('#categBrowbone').click(function() {
+		changeCateg(this,'browbone');
+	});
+
 
 });
 
