@@ -400,6 +400,67 @@ html {
 										}
 									}
 								}
+
+								&.browbone {
+									.options_variants {
+										.opt {
+											.opt_inner {
+												background-size: 105px;
+												background-repeat: no-repeat;
+												position: relative;
+												background-position: bottom;
+
+												&:after {
+													position: absolute;
+													content: "";
+													display: block;
+													width: 100%;
+													height: 100%;
+													background-size: 105px;
+													background-repeat: no-repeat;
+													background-position: bottom;
+												}
+											}
+
+											&.opt-browbone0 {
+												.opt_inner {
+													background-image: url('../doll/base/browbone/browbone0-min.png');
+													&:after {
+														background-image: url('../doll/base/base-min.png')
+													}
+												}
+											}
+											&.opt-browbone1 {
+												.opt_inner {
+													background-image: url('../doll/base/browbone/browbone1-min.png');
+													&:after {
+														background-image: url('../doll/base/base-min.png');
+
+													}
+												}
+											}
+											&.opt-browbone2 {
+												.opt_inner {
+													background-image: url('../doll/base/browbone/browbone2-min.png');
+													&:after {
+														background-image: url('../doll/base/base-min.png');
+
+													}
+												}
+											}
+											&.opt-browbone3 {
+												.opt_inner {
+													background-image: url('../doll/base/browbone/browbone3-min.png');
+													&:after {
+														background-image: url('../doll/base/base-min.png');
+
+													}
+												}
+											}
+									
+										}
+									}
+								}
 							}
 						}
 						.nav {
