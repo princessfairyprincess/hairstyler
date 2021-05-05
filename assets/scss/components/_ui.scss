@@ -405,10 +405,10 @@ html {
 									.options_variants {
 										.opt {
 											.opt_inner {
-												background-size: 105px;
-												background-repeat: no-repeat;
-												position: relative;
-												background-position: bottom;
+												background-size: 150%;
+    											background-repeat: no-repeat;
+    											position: relative;
+    											background-position: 50% 20%;
 
 												&:after {
 													position: absolute;
@@ -416,9 +416,10 @@ html {
 													display: block;
 													width: 100%;
 													height: 100%;
-													background-size: 105px;
+													background-size: 150%;
 													background-repeat: no-repeat;
-													background-position: bottom;
+													background-position: 50% 20%;
+													opacity: 0.3;
 												}
 											}
 
