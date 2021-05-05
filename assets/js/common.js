@@ -42,6 +42,31 @@ $( document ).ready(function() {
 
 	$('.col-skin').click(changeSkinTone);
 
+	//Change base hair colour
+	const hairOptsArray = $('.col-hairs');
+	changeHairCol = function() {
+		let hair = $('.haircol');
+		console.log(hair);
+		let foundInt;
+		let x;
+		for(x = 0; x <= 11; x++){
+			console.log(hairOptsArray[x]);
+			if(hairOptsArray[x] == this){
+				foundInt = x;
+				console.log(foundInt);
+			}
+		}
+		
+		let i;
+		for (i = 0; i <= 11; i++) {
+		
+			$('.haircol').removeClass('haircol'+[i]).addClass('haircol'+foundInt);
+		}
+
+	}
+
+	$('.col-hairs').click(changeHairCol);
+
 
  	//Change parts
 
