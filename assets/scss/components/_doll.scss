@@ -479,6 +479,58 @@
 			} 
 		}
 
+		//base hair colour
+
+		&.haircol {
+			&.haircol0 {
+				filter: unset;
+			}
+
+			&.haircol1 {
+				filter: brightness(2) hue-rotate(0deg);
+			}
+
+			&.haircol2 {
+				filter: brightness(0.4) hue-rotate(-24deg);
+			}
+
+			&.haircol3 {
+				filter: brightness(1.3) hue-rotate(335deg) saturate(2);
+			}
+
+			&.haircol4 {
+				filter: brightness(3.5) hue-rotate(4deg) saturate(0.5);
+			}
+
+			&.haircol5 {
+				filter: brightness(2) saturate(0.2);
+			}
+
+			&.haircol6 {
+				filter: brightness(2.5) hue-rotate(-8deg) saturate(1.8);
+			}
+
+			&.haircol7 {
+				filter: brightness(1.9) hue-rotate(-8deg) saturate(1.3);
+			}
+
+			&.haircol8 {
+				filter: brightness(1.4) hue-rotate(-94deg) saturate(1.8);
+			}
+
+			&.haircol9 {
+				filter: brightness(1.4) hue-rotate(-184deg) saturate(1.8);
+			}
+
+			&.haircol10 {
+				filter: brightness(1.5) hue-rotate(288deg) saturate(4.5);
+			}
+
+			&.haircol11 {
+				filter: brightness(4.7) hue-rotate(288deg) saturate(0);
+			}
+		}
+
 		
 	}
 }
