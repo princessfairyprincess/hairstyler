@@ -343,6 +343,79 @@
 			&.mouthlips4 {
 				background-image: url('../doll/base/mouthlips/mouthlips4-min.png');
 			}
+
+
+			&.lipshade0 {
+				mix-blend-mode: difference;
+				background-blend-mode: difference;
+    			filter: brightness(1.15) saturate(1) hue-rotate(-10deg);
+			}
+
+			&.lipshade1 {
+				mix-blend-mode: difference;
+				background-blend-mode: difference;
+    			filter: brightness(1.15) saturate(01) hue-rotate(5deg);
+			}
+
+			&.lipshade2 {
+				mix-blend-mode: hard-light;
+    			background-blend-mode: hard-light;
+    			filter: brightness(1.1) saturate(0.3) hue-rotate(-35deg);
+			}
+
+			&.lipshade3 {
+				mix-blend-mode: hard-light;
+    			background-blend-mode: hard-light;
+    			filter: brightness(1.0) saturate(0.3) hue-rotate(350deg);
+			}
+
+			&.lipshade4 {
+				mix-blend-mode: hard-light;
+				background-blend-mode: hard-light;
+				filter: brightness(0.9) saturate(0.4) hue-rotate(350deg);
+			}
+
+			&.lipshade5 {
+				mix-blend-mode: hard-light;
+    			background-blend-mode: hard-light;
+    			filter: brightness(0.9) saturate(0.4) hue-rotate(297deg);
+			}
+
+			&.lipshade6 {
+				mix-blend-mode: hard-light;
+    			background-blend-mode: hard-light;
+    			filter: brightness(0.9) saturate(0.4) hue-rotate(297deg);
+			}
+
+			&.lipshade7 {
+				mix-blend-mode: unset;
+				background-blend-mode: unset;
+    			filter: unset;
+			}
+
+			&.lipshade8 {
+			    mix-blend-mode: normal;
+    			background-blend-mode: normal;
+    			filter: brightness(1.2) saturate(0.9) hue-rotate(10deg);
+			}
+
+			&.lipshade9 {
+				mix-blend-mode: normal;
+    			background-blend-mode: normal;
+    			filter: brightness(1.2) saturate(0.85) hue-rotate(-5deg);
+			}
+
+			&.lipshade10 {
+			    mix-blend-mode: normal;
+    			background-blend-mode: normal;
+    			filter: brightness(1.4) saturate(0.7) hue-rotate(-15deg);
+			}
+
+			&.lipshade11 {
+				mix-blend-mode: normal;
+    			background-blend-mode: normal;
+    			filter: brightness(1.4) saturate(0.7) hue-rotate(5deg);
+			}
 		}
 
 		&.headwrap {

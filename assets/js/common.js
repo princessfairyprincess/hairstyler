@@ -36,6 +36,7 @@ $( document ).ready(function() {
 		for (i = 0; i <= 11; i++) {
 		
 			$('.skin').removeClass('skin'+[i]).addClass('skin'+foundInt);
+			$('.mouthlips').removeClass('lipshade'+[i]).addClass('lipshade'+foundInt);
 		}
 
 	}
@@ -230,7 +231,7 @@ $( document ).ready(function() {
 	});
 
 	$('#categBackground').click(function() {
-		changeCateg(this,'background');
+		changeCateg(this,'backdrop');
 	});
 
 	$('#categFeatures').click(function() {
