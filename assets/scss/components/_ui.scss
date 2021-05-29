@@ -231,8 +231,10 @@ html {
 								.options_variants {
 									display: grid;
 									grid-template-columns: repeat(5, 1fr);
+									grid-gap: 5px;
 									margin-right: 6em;
 									width: 100%;
+									min-width: 450px;
 									.opt {
 										width: 93px;
 										height: 93px;
@@ -264,7 +266,8 @@ html {
 								}
 
 								.options_colours {
-									display: grid;
+									.opts_colours_inner {
+										display: grid;
 									grid-template-columns: repeat(6, 1fr);
 									grid-gap: 0.5em;
 									.col {
@@ -490,6 +493,7 @@ html {
 										&.col-shirt-11 {
 											background-color: #ffffff;
 										}
+									}
 									}
 								}
 

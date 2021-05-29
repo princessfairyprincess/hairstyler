@@ -11,9 +11,6 @@ $( document ).ready(function() {
 	optColToggler.click(function(){
 		optColState.toggleClass('variants_active colors_active');
 		optViewer.toggleClass('variants_active_view colours_active_view');
-
-		//TODO: remove options_colours from other optViewer elems if optViewers have variants_active class
-
 	});
 
 	if ($(optViewer).hasClass('body')) {
@@ -184,12 +181,29 @@ $( document ).ready(function() {
 
 	}
 
+	//Move skin colour palette between categs
+	moveSkinColours = function(categ, opttype) {
+		
+		let skinColPalette = $('.skincols');
+		
+		let newPalette = $('.'+opttype+' .skincolpalette');
+
+		skinColPalette.appendTo(newPalette);
+
+		if (optViewer.hasClass('colours_active_view')) {
+			optViewer.removeClass('colours_active_view').addClass('variants_active_view');
+			optColState.removeClass('colors_active').addClass('variants_active');
+		}
+	}
+
 	$('#categBody').click(function() {
 		changeCateg(this,'body');
+		moveSkinColours(this, 'body');
 	});
 
 	$('#categBrowbone').click(function() {
 		changeCateg(this,'browbone');
+		moveSkinColours(this,'browbone');
 	});
 
 	$('#categBrows').click(function() {
@@ -198,10 +212,12 @@ $( document ).ready(function() {
 
 	$('#categCheeks').click(function() {
 		changeCateg(this,'cheeks');
+		moveSkinColours(this,'cheeks');
 	});
 
 	$('#categChest').click(function() {
 		changeCateg(this,'chest');
+		moveSkinColours(this,'chest');
 	});
 
 	$('#categEyes').click(function() {
@@ -210,18 +226,22 @@ $( document ).ready(function() {
 
 	$('#categHand').click(function() {
 		changeCateg(this,'hand');
+		moveSkinColours(this,'hand');
 	});
 
 	$('#categJawline').click(function() {
 		changeCateg(this,'jawline');
+		moveSkinColours(this,'jawline');
 	});
 
 	$('#categMouth').click(function() {
 		changeCateg(this,'mouth');
+		moveSkinColours(this,'mouth');
 	});
 
 	$('#categNose').click(function() {
 		changeCateg(this,'nose');
+		moveSkinColours(this,'nose');
 	});
 
 	$('#categBackground').click(function() {
@@ -230,6 +250,7 @@ $( document ).ready(function() {
 
 	$('#categFeatures').click(function() {
 		changeCateg(this,'features');
+		moveSkinColours(this,'features');
 	});
 
 	$('#categEyeMakeup').click(function() {
