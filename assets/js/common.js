@@ -11,6 +11,9 @@ $( document ).ready(function() {
 	optColToggler.click(function(){
 		optColState.toggleClass('variants_active colors_active');
 		optViewer.toggleClass('variants_active_view colours_active_view');
+
+		//TODO: remove options_colours from other optViewer elems if optViewers have variants_active class
+
 	});
 
 	if ($(optViewer).hasClass('body')) {
@@ -47,14 +50,11 @@ $( document ).ready(function() {
 	const hairOptsArray = $('.col-hairs');
 	changeHairCol = function() {
 		let hair = $('.haircol');
-		console.log(hair);
 		let foundInt;
 		let x;
 		for(x = 0; x <= 11; x++){
-			console.log(hairOptsArray[x]);
 			if(hairOptsArray[x] == this){
 				foundInt = x;
-				console.log(foundInt);
 			}
 		}
 		
@@ -67,6 +67,30 @@ $( document ).ready(function() {
 	}
 
 	$('.col-hairs').click(changeHairCol);
+
+	//Change eye colour
+	const eyeOptsArray = $('.col-eyes');
+	changeEyeCol = function() {
+		let eyes = $('.eyecol');
+		let foundInt;
+		let x;
+		for(x = 0; x <= 11; x++){
+			console.log(eyeOptsArray[x]);
+			if(eyeOptsArray[x] == this){
+				foundInt = x;
+				console.log(foundInt);
+			}
+		}
+		
+		let i;
+		for (i = 0; i <= 11; i++) {
+		
+			$('.eyecol').removeClass('eyecol'+[i]).addClass('eyecol'+foundInt);
+		}
+
+	}
+
+	$('.col-eyes').click(changeEyeCol);
 
 
  	//Change parts
