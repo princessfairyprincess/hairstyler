@@ -423,79 +423,74 @@
 		}
 
 		&.shirt {
-			&.shirt-body0chest0 {
-				background-image: url('../doll/base/shirt/shirt-body0chest0-min.png');
+			&.shirt-body0 {
+				&.shirt-chest0 {
+					background-image: url('../doll/base/shirt/shirt-body0chest0-min.png');
+				}
 
+				&.shirt-chest1 {
+					background-image: url('../doll/base/shirt/shirt-body0chest1-min.png');
+				}
+
+				&.shirt-chest2 {
+					background-image: url('../doll/base/shirt/shirt-body0chest2-min.png');
+				}
 			}
 
-			&.shirt-body1chest0 {
-				background-image: url('../doll/base/shirt/shirt-body1chest0-min.png');
+			&.shirt-body1 {
+				&.shirt-chest0 {
+					background-image: url('../doll/base/shirt/shirt-body1chest0-min.png');
+				}
 
+				&.shirt-chest1 {
+					background-image: url('../doll/base/shirt/shirt-body1chest1-min.png');
+				}
+
+				&.shirt-chest2 {
+					background-image: url('../doll/base/shirt/shirt-body1chest2-min.png');
+				}
 			}
 
-			&.shirt-body2chest0 {
-				background-image: url('../doll/base/shirt/shirt-body2chest0-min.png');
+			&.shirt-body2 {
+				&.shirt-chest0 {
+					background-image: url('../doll/base/shirt/shirt-body2chest0-min.png');
+				}
 
+				&.shirt-chest1 {
+					background-image: url('../doll/base/shirt/shirt-body2chest1-min.png');
+				}
+
+				&.shirt-chest2 {
+					background-image: url('../doll/base/shirt/shirt-body2chest2-min.png');
+				}
 			}
 
-			&.shirt-body3chest0 {
-				background-image: url('../doll/base/shirt/shirt-body3chest0-min.png');
+			&.shirt-body3 {
+				&.shirt-chest0 {
+					background-image: url('../doll/base/shirt/shirt-body3chest0-min.png');
+				}
 
+				&.shirt-chest1 {
+					background-image: url('../doll/base/shirt/shirt-body3chest1-min.png');
+				}
+
+				&.shirt-chest2 {
+					background-image: url('../doll/base/shirt/shirt-body3chest2-min.png');
+				}
 			}
 
-			&.shirt-body4chest0 {
-				background-image: url('../doll/base/shirt/shirt-body4chest0-min.png');
+			&.shirt-body4 {
+				&.shirt-chest0 {
+					background-image: url('../doll/base/shirt/shirt-body4chest0-min.png');
+				}
 
-			}
+				&.shirt-chest1 {
+					background-image: url('../doll/base/shirt/shirt-body4chest1-min.png');
+				}
 
-			&.shirt-body0chest1 {
-				background-image: url('../doll/base/shirt/shirt-body0chest1-min.png');
-
-			}
-
-			&.shirt-body1chest1 {
-				background-image: url('../doll/base/shirt/shirt-body1chest1-min.png');
-
-			}
-
-			&.shirt-body2chest1 {
-				background-image: url('../doll/base/shirt/shirt-body2chest1-min.png');
-
-			}
-
-			&.shirt-body3chest1 {
-				background-image: url('../doll/base/shirt/shirt-body3chest1-min.png');
-
-			}
-
-			&.shirt-body4chest1 {
-				background-image: url('../doll/base/shirt/shirt-body4chest1-min.png');
-
-			}
-
-			&.shirt-body0chest2 {
-				background-image: url('../doll/base/shirt/shirt-body0chest2-min.png');
-
-			}
-
-			&.shirt-body1chest2 {
-				background-image: url('../doll/base/shirt/shirt-body1chest2-min.png');
-
-			}
-
-			&.shirt-body2chest2 {
-				background-image: url('../doll/base/shirt/shirt-body2chest2-min.png');
-
-			}
-
-			&.shirt-body3chest2 {
-				background-image: url('../doll/base/shirt/shirt-body3chest2min.png');
-
-			}
-
-			&.shirt-body4chest2 {
-				background-image: url('../doll/base/shirt/shirt-body4chest2-min.png');
-
+				&.shirt-chest2 {
+					background-image: url('../doll/base/shirt/shirt-body4chest2-min.png');
+				}
 			}
 		}
 

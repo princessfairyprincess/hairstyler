@@ -139,7 +139,11 @@ $( document ).ready(function() {
 
 			if ($(object).hasClass('opt-body')) {
 				$('.arm').removeClass('arm'+[i]).addClass('arm'+foundInt);
-				$('.shirt').removeClass('shirt-body'+[i]+'chest0').addClass('shirt-body'+foundInt+'chest0');
+				$('.shirt').removeClass('shirt-body'+[i]).addClass('shirt-body'+foundInt);
+			}
+
+			if ($(object).hasClass('opt-chest')) {
+				$('.shirt').removeClass('shirt-chest'+[i]).addClass('shirt-chest'+foundInt);
 			}
 
 			if ($(object).hasClass('opt-brows')) {
