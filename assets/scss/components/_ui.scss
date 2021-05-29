@@ -134,156 +134,218 @@ html {
 				border-radius: 50px;
 				box-shadow: -2px -2px 15px rgba(255, 255, 255, 70%), 3px 3px 20px rgba(0, 0, 0, 10%);
 				background: rgb(250,225,232);
+				position: relative;
 				background: linear-gradient(311deg, rgba(250,225,232,0.6) 0%, rgba(255,255,255,0.7) 100%);
-				.controls {
+				.sections {
+					position: absolute;
+					top: 0;
 					display: flex;
-					flex-direction: column;
-					height: 100%;
-					.top {
-						display: block;
-						height: fit-content;
-						.sections {
-							display: flex;
-							justify-content: space-between;
-							padding: 25px 50px 0;
-							.section {
-								.section_link {
-									background-color: $deeppink;
-									padding: 1em 2em;
-									border-radius: 100%;
-									transition: $ease;
-									&.active {
-										background-color: $pink;
-										box-shadow: 0 0 10px rgba(255, 148, 204, 0.7), 1px 2px 4px rgba(0, 0, 0, 0.15);
-									}
+					justify-content: space-between;
+					padding: 25px 50px 0;
+					width: 100%;
+					box-sizing: border-box;
+					z-index: 99999;
+					.section {
+						cursor: pointer;
+						border-radius: 100%;
+						.section_link {
+							background-color: $deeppink;
+							padding: 1em 2em;
+							border-radius: 100%;
+							transition: $ease;
 
-									&:hover {
-										transform: $hovergrow;
-									}
-									a {
-										font-size: 36px;
-										line-height: 40px;
-										text-decoration: none;
-										color: white;
-									}
-								}
+							&.active {
+								background-color: $pink;
+								box-shadow: 0 0 10px rgba(255, 148, 204, 0.7), 1px 2px 4px rgba(0, 0, 0, 0.15);
 							}
-						}
-						.categs {
-							padding: 50px;
-							.categs_grid {
-								display: grid;
-								grid-template-columns: repeat(6, 1fr);
-								grid-row-gap: 0.67em;
-								.categ {
-									margin: 0 auto;
-									border-radius: 100%;
-									width: 75px;
-									height: 75px;
-									position: relative;
-									background-color: white;
-									transition: $ease;
-									cursor: pointer;
-									&:hover {
-										transform: $hovergrow;
-										box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
-									}
-									&.active {
-										background-color: $palepink;
-										box-shadow: 0 0 10px rgba(255, 148, 204, 0.7), 1px 2px 4px rgba(0, 0, 0, 0.15);
-									}
-									img {
-										position: absolute;
-										width: 100%;
-										height: auto;
-										border-radius: 100%;
 
-									}
-								}
-
+							&:hover {
+								transform: $hovergrow;
+								cursor: pointer;
+							}
+							span {
+								font-size: 36px;
+								line-height: 40px;
+								text-decoration: none;
+								color: white;
 							}
 						}
 					}
+				}
 
-					.bottom {
-						position: relative;
-						height: -webkit-fill-available;
-						background-color: rgba(255, 148, 204, 0.3);
-						.options_outer {
-							width: 100%;
-							.options {
-								padding: 50px;
-								width: 190%;
+				.controls {
+					display: flex;
+					flex-direction: row;
+					height: 100%;
+					width: 200%;
+					position: relative;
+					box-sizing: border-box;
+					overflow: hidden;
+					
+					&.doll_active {
+						transform: translateX(0);
+					}
+
+					&.hair_active {
+						transform: translateX(-50%);
+					}
+
+					.control_section {
+						width: 100%;
+						display: flex;
+						flex-direction: column;
+						min-width: 400px;
+						overflow: hidden;
+
+						.top {
+							display: block;
+							height: fit-content;
+							padding-top: 110px;
+							position: relative;
+							.sections {
+								position: absolute;
+								top: 0;
 								display: flex;
-								flex-direction: row;
-								align-items: center;
-								box-sizing: border-box;
-								transition: transform ease 0.2s;
-
-								&.variants_active_view {
-									transform: translateX(0);
-								}
-
-								&.colours_active_view {
-									transform: translateX(-50%);
-								}
-
-								.options_variants {
-									display: grid;
-									grid-template-columns: repeat(5, 1fr);
-									grid-gap: 5px;
-									margin-right: 6em;
-									width: 100%;
-									min-width: 450px;
-									.opt {
-										width: 93px;
-										height: 93px;
-										background-color: white;
-										margin: 0 auto;
-										border-radius: 10px;
-										overflow: hidden;
+								justify-content: space-between;
+								padding: 25px 50px 0;
+								.section {
+									.section_link {
+										background-color: $deeppink;
+										padding: 1em 2em;
+										border-radius: 100%;
 										transition: $ease;
-
-										.opt_inner {
-											width: 100%;
-											height: 100%;
-											display: block;
-											margin: 0;
-											padding: 0;
-											filter: hue-rotate(248deg) drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
-										}
-
 										&.active {
-											background-color: $lavender;
-											box-shadow: $glow;
+											background-color: $pink;
+											box-shadow: 0 0 10px rgba(255, 148, 204, 0.7), 1px 2px 4px rgba(0, 0, 0, 0.15);
 										}
 
 										&:hover {
 											transform: $hovergrow;
-											cursor: pointer;
+										}
+										a {
+											font-size: 36px;
+											line-height: 40px;
+											text-decoration: none;
+											color: white;
 										}
 									}
 								}
-
-								.options_colours {
-									.opts_colours_inner {
-										display: grid;
+							}
+							.categs {
+								padding: 50px;
+								.categs_grid {
+									display: grid;
 									grid-template-columns: repeat(6, 1fr);
-									grid-gap: 0.5em;
-									.col {
-										width: 76px;
-										height: 76px;
+									grid-row-gap: 0.67em;
+									.categ {
+										margin: 0 auto;
 										border-radius: 100%;
+										width: 75px;
+										height: 75px;
+										position: relative;
+										background-color: white;
 										transition: $ease;
 										cursor: pointer;
-
-										&.active {
-
-										}
-
 										&:hover {
 											transform: $hovergrow;
+											box-shadow: 1px 2px 4px rgba(0,0,0,0.15);
 										}
+										&.active {
+											background-color: $palepink;
+											box-shadow: 0 0 10px rgba(255, 148, 204, 0.7), 1px 2px 4px rgba(0, 0, 0, 0.15);
+										}
+										img {
+											position: absolute;
+											width: 100%;
+											height: auto;
+											border-radius: 100%;
+
+										}
+									}
+
+								}
+							}
+						}
+
+						.bottom {
+							position: relative;
+							height: -webkit-fill-available;
+							background-color: rgba(255, 148, 204, 0.3);
+							.options_outer {
+								width: 100%;
+								.options {
+									padding: 50px;
+									width: 190%;
+									display: flex;
+									flex-direction: row;
+									align-items: center;
+									box-sizing: border-box;
+									transition: transform ease 0.2s;
+
+									&.variants_active_view {
+										transform: translateX(0);
+									}
+
+									&.colours_active_view {
+										transform: translateX(-50%);
+									}
+
+									.options_variants {
+										display: grid;
+										grid-template-columns: repeat(5, 1fr);
+										grid-gap: 5px;
+										margin-right: 6em;
+										width: 100%;
+										min-width: 450px;
+										.opt {
+											width: 93px;
+											height: 93px;
+											background-color: white;
+											margin: 0 auto;
+											border-radius: 10px;
+											overflow: hidden;
+											transition: $ease;
+
+											.opt_inner {
+												width: 100%;
+												height: 100%;
+												display: block;
+												margin: 0;
+												padding: 0;
+												filter: hue-rotate(248deg) drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+											}
+
+											&.active {
+												background-color: $lavender;
+												box-shadow: $glow;
+											}
+
+											&:hover {
+												transform: $hovergrow;
+												cursor: pointer;
+											}
+										}
+									}
+
+									.options_colours {
+										.opts_colours_inner {
+											display: grid;
+											grid-template-columns: repeat(6, 1fr);
+											grid-gap: 0.5em;
+											.col {
+												width: 76px;
+												height: 76px;
+												border-radius: 100%;
+												transition: $ease;
+												cursor: pointer;
+
+												&.active {
+
+												}
+
+												&:hover {
+													transform: $hovergrow;
+												}
 
 										//Hair colours
 
@@ -430,14 +492,14 @@ html {
 											background-color: unset;
 											background-image: linear-gradient( 
 												45deg
-											 	, #945a19 0%, #945a19 49%, #388c3a 51%, #388c3a 100%);
+												, #945a19 0%, #945a19 49%, #388c3a 51%, #388c3a 100%);
 										}
 
 										&.col-eyes-10 {
-										    background-color: unset;
-										    background-image: linear-gradient( 
+											background-color: unset;
+											background-image: linear-gradient( 
 												45deg
-										 	, #296283 0%, #296283 49%, #388c3a 51%, #388c3a 100%);
+												, #296283 0%, #296283 49%, #388c3a 51%, #388c3a 100%);
 										}
 
 										&.col-eyes-11 {
@@ -494,766 +556,766 @@ html {
 											background-color: #ffffff;
 										}
 									}
-									}
 								}
+							}
 
-								&.body {
-									.options_variants {
-										.opt {
-											.opt_inner {
+							&.body {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 105px;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: bottom;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
 												background-size: 105px;
 												background-repeat: no-repeat;
-												position: relative;
 												background-position: bottom;
-
-												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 105px;
-													background-repeat: no-repeat;
-													background-position: bottom;
-												}
-											}
-
-											&.opt-body0 {
-												.opt_inner {
-													background-image: url('../doll/base/body/body0-min.png');
-													&:after {
-														background-image: url('../doll/base/arm/arm0-min.png')
-													}
-												}
-											}
-											&.opt-body1 {
-												.opt_inner {
-													background-image: url('../doll/base/body/body1-min.png');
-													&:after {
-														background-image: url('../doll/base/arm/arm1-min.png');
-
-													}
-												}
-											}
-											&.opt-body2 {
-												.opt_inner {
-													background-image: url('../doll/base/body/body2-min.png');
-													&:after {
-														background-image: url('../doll/base/arm/arm2-min.png');
-
-													}
-												}
-											}
-											&.opt-body3 {
-												.opt_inner {
-													background-image: url('../doll/base/body/body3-min.png');
-													&:after {
-														background-image: url('../doll/base/arm/arm3-min.png');
-
-													}
-												}
-											}
-											&.opt-body4 {
-												.opt_inner {
-													background-image: url('../doll/base/body/body4-min.png');
-													&:after {
-														background-image: url('../doll/base/arm/arm4-min.png');
-
-													}
-												}
 											}
 										}
-									}
-								}
 
-								&.browbone {
-									.options_variants {
-										.opt {
+										&.opt-body0 {
 											.opt_inner {
-												background-size: 150%;
-    											background-repeat: no-repeat;
-    											position: relative;
-    											background-position: 50% 20%;
-
+												background-image: url('../doll/base/body/body0-min.png');
 												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 150%;
-													background-repeat: no-repeat;
-													background-position: 50% 20%;
-													opacity: 0.3;
+													background-image: url('../doll/base/arm/arm0-min.png')
 												}
 											}
-
-											&.opt-browbone0 {
-												.opt_inner {
-													background-image: url('../doll/base/browbone/browbone0-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png')
-													}
-												}
-											}
-											&.opt-browbone1 {
-												.opt_inner {
-													background-image: url('../doll/base/browbone/browbone1-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-											&.opt-browbone2 {
-												.opt_inner {
-													background-image: url('../doll/base/browbone/browbone2-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-											&.opt-browbone3 {
-												.opt_inner {
-													background-image: url('../doll/base/browbone/browbone3-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-									
 										}
-									}
-								}
-
-								&.brows {
-									.options_variants {
-										.opt {
+										&.opt-body1 {
 											.opt_inner {
-												background-size: 200%;
-    											background-repeat: no-repeat;
-    											position: relative;
-    											background-position: 50% 20%;
-
+												background-image: url('../doll/base/body/body1-min.png');
 												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 200%;
-    												background-repeat: no-repeat;
-    												background-position: 50% 20%;
-												}
-											}
+													background-image: url('../doll/base/arm/arm1-min.png');
 
-											&.opt-brows0 {
-												.opt_inner {
-													background-image: url('../doll/base/brows/brows0-min.png');
-													&:after {
-														background-image: url('../doll/base/browhairs/browhairs0-min.png')
-													}
-												}
-											}
-											&.opt-brows1 {
-												.opt_inner {
-													background-image: url('../doll/base/brows/brows1-min.png');
-													&:after {
-														background-image: url('../doll/base/browhairs/browhairs1-min.png');
-
-													}
-												}
-											}
-											&.opt-brows2 {
-												.opt_inner {
-													background-image: url('../doll/base/brows/brows2-min.png');
-													&:after {
-														background-image: url('../doll/base/browhairs/browhairs2-min.png');
-
-													}
-												}
-											}
-											&.opt-brows3 {
-												.opt_inner {
-													background-image: url('../doll/base/brows/brows3-min.png');
-													&:after {
-														background-image: url('../doll/base/browhairs/browhairs3-min.png');
-
-													}
-												}
-											}
-											&.opt-brows4 {
-												.opt_inner {
-													background-image: url('../doll/base/brows/brows4-min.png');
-													&:after {
-														background-image: url('../doll/base/browhairs/browhairs4-min.png');
-
-													}
 												}
 											}
 										}
-									}
-								}
-
-								&.cheeks {
-									.options_variants {
-										.opt {
+										&.opt-body2 {
 											.opt_inner {
-												background-size: 150%;
-    											background-repeat: no-repeat;
-    											position: relative;
-    											background-position: 50% 25%;
-
+												background-image: url('../doll/base/body/body2-min.png');
 												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 150%;
-													background-repeat: no-repeat;
-													background-position: 50% 25%;
-													opacity: 0.3;
+													background-image: url('../doll/base/arm/arm2-min.png');
+
 												}
 											}
-
-											&.opt-cheeks0 {
-												.opt_inner {
-													background-image: url('../doll/base/cheeks/cheeks0-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png')
-													}
-												}
-											}
-											&.opt-cheeks1 {
-												.opt_inner {
-													background-image: url('../doll/base/cheeks/cheeks1-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-											&.opt-cheeks2 {
-												.opt_inner {
-													background-image: url('../doll/base/cheeks/cheeks2-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-											&.opt-cheeks3 {
-												.opt_inner {
-													background-image: url('../doll/base/cheeks/cheeks3-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-
-											&.opt-cheeks4 {
-												.opt_inner {
-													background-image: url('../doll/base/cheeks/cheeks4-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-									
 										}
-									}
-								}
-
-								&.chest {
-									.options_variants {
-										.opt {
+										&.opt-body3 {
 											.opt_inner {
-												    background-size: 100%;
-   													background-repeat: no-repeat;
-    												position: relative;
-    												background-position: 50% 100%;
-
+												background-image: url('../doll/base/body/body3-min.png');
 												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 100%;
-													background-repeat: no-repeat;
-													background-position: 50% 100%;
-													opacity: 0.3;
-												}
-											}
+													background-image: url('../doll/base/arm/arm3-min.png');
 
-											&.opt-chest0 {
-												.opt_inner {
-													background-image: url('../doll/base/chest/chest0-min.png');
-													&:after {
-														background-image: url('../doll/base/body/body0-min.png');
-													}
 												}
 											}
-											&.opt-chest1 {
-												.opt_inner {
-													background-image: url('../doll/base/chest/chest1-min.png');
-													&:after {
-														background-image: url('../doll/base/body/body0-min.png');
-													}
-												}
-											}
-											&.opt-chest2 {
-												.opt_inner {
-													background-image: url('../doll/base/chest/chest2-min.png');
-													&:after {
-														background-image: url('../doll/base/body/body0-min.png');
-
-													}
-												}
-											}
-										
-									
 										}
-									}
-								}
-
-								&.eyes {
-									.options_variants {
-										.opt {
+										&.opt-body4 {
 											.opt_inner {
-												    background-size: 250%;
-    												background-repeat: no-repeat;
-    												position: relative;
-    												background-position: 40% 30%;
-
+												background-image: url('../doll/base/body/body4-min.png');
 												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 250%;
-    												background-repeat: no-repeat;
-    												background-position: 40% 30%;
-													opacity: 1;
-												}
-											}
+													background-image: url('../doll/base/arm/arm4-min.png');
 
-											&.opt-eyes0 {
-												.opt_inner {
-													background-image: url('../doll/base/eyeballs/eyeballs0-min.png');
-													&:after {
-														background-image: url('../doll/base/eyelids/eyelids0-min.png');
-													}
 												}
 											}
-											&.opt-eyes1 {
-												.opt_inner {
-													background-image: url('../doll/base/eyeballs/eyeballs1-min.png');
-													&:after {
-														background-image: url('../doll/base/eyelids/eyelids1-min.png');
-													}
-												}
-											}
-											&.opt-eyes2 {
-												.opt_inner {
-													background-image: url('../doll/base/eyeballs/eyeballs2-min.png');
-													&:after {
-														background-image: url('../doll/base/eyelids/eyelids2-min.png');
-													}
-												}
-											}
-											&.opt-eyes3 {
-												.opt_inner {
-													background-image: url('../doll/base/eyeballs/eyeballs3-min.png');
-													&:after {
-														background-image: url('../doll/base/eyelids/eyelids3-min.png');
-													}
-												}
-											}
-											&.opt-eyes4 {
-												.opt_inner {
-													background-image: url('../doll/base/eyeballs/eyeballs4-min.png');
-													&:after {
-														background-image: url('../doll/base/eyelids/eyelids4-min.png');
-													}
-												}
-											}
-										
-									
 										}
 									}
 								}
-
-								&.hand {
-									.options_variants {
-										.opt {
-											.opt_inner {
-												    background-size: 150%;
-   													background-repeat: no-repeat;
-    												position: relative;
-    												background-position: 2% 70%;
-
-												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 150%;
-													background-repeat: no-repeat;
-													background-position: 2% 70%;
-													opacity: 0.3;
-												}
-											}
-
-											&.opt-hands0 {
-												.opt_inner {
-													background-image: url('../doll/base/hand/hand0-min.png');
-													&:after {
-														background-image: url('../doll/base/arm/arm0-min.png');
-													}
-												}
-											}
-											&.opt-hands1 {
-												.opt_inner {
-													background-image: url('../doll/base/hand/hand1-min.png');
-													&:after {
-														background-image: url('../doll/base/arm/arm0-min.png');
-													}
-												}
-											}
-											&.opt-hands2 {
-												.opt_inner {
-													background-image: url('../doll/base/hand/hand2-min.png');
-													&:after {
-														background-image: url('../doll/base/arm/arm0-min.png');
-													}
-												}
-											}
-											&.opt-hands3 {
-												.opt_inner {
-													background-image: url('../doll/base/hand/hand3-min.png');
-													&:after {
-														background-image: url('../doll/base/arm/arm0-min.png');
-													}
-												}
-											}
-										
-									
-										}
-									}
-								}
-
-								&.jawline {
-									.options_variants {
-										.opt {
-											.opt_inner {
-												background-size: 150%;
-    											background-repeat: no-repeat;
-    											position: relative;
-    											background-position: 50% 25%;
-
-												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 150%;
-													background-repeat: no-repeat;
-													background-position: 50% 25%;
-													opacity: 0.3;
-												}
-											}
-
-											&.opt-jawline0 {
-												.opt_inner {
-													background-image: url('../doll/base/jawline/jawline0-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png')
-													}
-												}
-											}
-											&.opt-jawline1 {
-												.opt_inner {
-													background-image: url('../doll/base/jawline/jawline1-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-											&.opt-jawline2 {
-												.opt_inner {
-													background-image: url('../doll/base/jawline/jawline2-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-											&.opt-jawline3 {
-												.opt_inner {
-													background-image: url('../doll/base/jawline/jawline3-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-
-											&.opt-jawline4 {
-												.opt_inner {
-													background-image: url('../doll/base/jawline/jawline4-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-									
-										}
-									}
-								}
-
-								&.mouth {
-									.options_variants {
-										.opt {
-											.opt_inner {
-												    background-size: 390%;
-    												background-repeat: no-repeat;
-    												position: relative;
-    												background-position: 40% 44%;
-
-												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 390%;
-    												background-repeat: no-repeat;
-    												background-position: 40% 44%;
-													opacity: 1;
-												}
-											}
-
-											&.opt-mouth0 {
-												.opt_inner {
-													background-image: url('../doll/base/mouth/mouth0-min.png');
-													&:after {
-														background-image: url('../doll/base/mouthlips/mouthlips0-min.png');
-													}
-												}
-											}
-											&.opt-mouth1 {
-												.opt_inner {
-													background-image: url('../doll/base/mouth/mouth1-min.png');
-													&:after {
-														background-image: url('../doll/base/mouthlips/mouthlips1-min.png');
-													}
-												}
-											}
-											&.opt-mouth2 {
-												.opt_inner {
-													background-image: url('../doll/base/mouth/mouth2-min.png');
-													&:after {
-														background-image: url('../doll/base/mouthlips/mouthlips2-min.png');
-													}
-												}
-											}
-											&.opt-mouth3 {
-												.opt_inner {
-													background-image: url('../doll/base/mouth/mouth3-min.png');
-													&:after {
-														background-image: url('../doll/base/mouthlips/mouthlips3-min.png');
-													}
-												}
-											}
-											&.opt-mouth4 {
-												.opt_inner {
-													background-image: url('../doll/base/mouth/mouth4-min.png');
-													&:after {
-														background-image: url('../doll/base/mouthlips/mouthlips4-min.png');
-													}
-												}
-											}
-										
-									
-										}
-									}
-								}
-
-								&.nose {
-									.options_variants {
-										.opt {
-											.opt_inner {
-												background-size: 305%;
-    											background-repeat: no-repeat;
-    											position: relative;
-    											background-position: 35% 34%;
-
-												&:after {
-													position: absolute;
-													content: "";
-													display: block;
-													width: 100%;
-													height: 100%;
-													background-size: 305%;
-													background-repeat: no-repeat;
-													background-position: 35% 34%;
-													opacity: 0.3;
-												}
-											}
-
-											&.opt-nose0 {
-												.opt_inner {
-													background-image: url('../doll/base/nose/nose0-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png')
-													}
-												}
-											}
-											&.opt-nose1 {
-												.opt_inner {
-													background-image: url('../doll/base/nose/nose1-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-											&.opt-nose2 {
-												.opt_inner {
-													background-image: url('../doll/base/nose/nose2-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-											&.opt-nose3 {
-												.opt_inner {
-													background-image: url('../doll/base/nose/nose3-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-
-											&.opt-nose4 {
-												.opt_inner {
-													background-image: url('../doll/base/nose/nose4-min.png');
-													&:after {
-														background-image: url('../doll/base/base-min.png');
-
-													}
-												}
-											}
-									
-										}
-									}
-								}
-
 							}
-						}
-						.nav {
-							width: 100%;
-							padding: 0 50px 25px;
-							box-sizing: border-box;
-							
-							.nav_inner {
-								font-family: $euphoria;
-								display: flex;
-								box-sizing: border-box;
-								flex-direction: row;
-								justify-content: center;
-								.nav_btn {
-									position: absolute;
-									top: 35%;
-									background-color:  $pink;
-									border-radius: 100%;
-									padding: 5px;
-									width: 35px;
-									height: 35px;
-									display: flex;
-									align-items: center;
-									justify-content: center;
-									transition: $ease;
 
-									&:hover {
-										transform: $hovergrow;
+							&.browbone {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 150%;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: 50% 20%;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
+												background-size: 150%;
+												background-repeat: no-repeat;
+												background-position: 50% 20%;
+												opacity: 0.3;
+											}
+										}
+
+										&.opt-browbone0 {
+											.opt_inner {
+												background-image: url('../doll/base/browbone/browbone0-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png')
+												}
+											}
+										}
+										&.opt-browbone1 {
+											.opt_inner {
+												background-image: url('../doll/base/browbone/browbone1-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+										&.opt-browbone2 {
+											.opt_inner {
+												background-image: url('../doll/base/browbone/browbone2-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+										&.opt-browbone3 {
+											.opt_inner {
+												background-image: url('../doll/base/browbone/browbone3-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+
 									}
+								}
+							}
+
+							&.brows {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 200%;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: 50% 20%;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
+												background-size: 200%;
+												background-repeat: no-repeat;
+												background-position: 50% 20%;
+											}
+										}
+
+										&.opt-brows0 {
+											.opt_inner {
+												background-image: url('../doll/base/brows/brows0-min.png');
+												&:after {
+													background-image: url('../doll/base/browhairs/browhairs0-min.png')
+												}
+											}
+										}
+										&.opt-brows1 {
+											.opt_inner {
+												background-image: url('../doll/base/brows/brows1-min.png');
+												&:after {
+													background-image: url('../doll/base/browhairs/browhairs1-min.png');
+
+												}
+											}
+										}
+										&.opt-brows2 {
+											.opt_inner {
+												background-image: url('../doll/base/brows/brows2-min.png');
+												&:after {
+													background-image: url('../doll/base/browhairs/browhairs2-min.png');
+
+												}
+											}
+										}
+										&.opt-brows3 {
+											.opt_inner {
+												background-image: url('../doll/base/brows/brows3-min.png');
+												&:after {
+													background-image: url('../doll/base/browhairs/browhairs3-min.png');
+
+												}
+											}
+										}
+										&.opt-brows4 {
+											.opt_inner {
+												background-image: url('../doll/base/brows/brows4-min.png');
+												&:after {
+													background-image: url('../doll/base/browhairs/browhairs4-min.png');
+
+												}
+											}
+										}
+									}
+								}
+							}
+
+							&.cheeks {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 150%;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: 50% 25%;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
+												background-size: 150%;
+												background-repeat: no-repeat;
+												background-position: 50% 25%;
+												opacity: 0.3;
+											}
+										}
+
+										&.opt-cheeks0 {
+											.opt_inner {
+												background-image: url('../doll/base/cheeks/cheeks0-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png')
+												}
+											}
+										}
+										&.opt-cheeks1 {
+											.opt_inner {
+												background-image: url('../doll/base/cheeks/cheeks1-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+										&.opt-cheeks2 {
+											.opt_inner {
+												background-image: url('../doll/base/cheeks/cheeks2-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+										&.opt-cheeks3 {
+											.opt_inner {
+												background-image: url('../doll/base/cheeks/cheeks3-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+
+										&.opt-cheeks4 {
+											.opt_inner {
+												background-image: url('../doll/base/cheeks/cheeks4-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+
+									}
+								}
+							}
+
+							&.chest {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 100%;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: 50% 100%;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
+												background-size: 100%;
+												background-repeat: no-repeat;
+												background-position: 50% 100%;
+												opacity: 0.3;
+											}
+										}
+
+										&.opt-chest0 {
+											.opt_inner {
+												background-image: url('../doll/base/chest/chest0-min.png');
+												&:after {
+													background-image: url('../doll/base/body/body0-min.png');
+												}
+											}
+										}
+										&.opt-chest1 {
+											.opt_inner {
+												background-image: url('../doll/base/chest/chest1-min.png');
+												&:after {
+													background-image: url('../doll/base/body/body0-min.png');
+												}
+											}
+										}
+										&.opt-chest2 {
+											.opt_inner {
+												background-image: url('../doll/base/chest/chest2-min.png');
+												&:after {
+													background-image: url('../doll/base/body/body0-min.png');
+
+												}
+											}
+										}
+										
+
+									}
+								}
+							}
+
+							&.eyes {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 250%;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: 40% 30%;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
+												background-size: 250%;
+												background-repeat: no-repeat;
+												background-position: 40% 30%;
+												opacity: 1;
+											}
+										}
+
+										&.opt-eyes0 {
+											.opt_inner {
+												background-image: url('../doll/base/eyeballs/eyeballs0-min.png');
+												&:after {
+													background-image: url('../doll/base/eyelids/eyelids0-min.png');
+												}
+											}
+										}
+										&.opt-eyes1 {
+											.opt_inner {
+												background-image: url('../doll/base/eyeballs/eyeballs1-min.png');
+												&:after {
+													background-image: url('../doll/base/eyelids/eyelids1-min.png');
+												}
+											}
+										}
+										&.opt-eyes2 {
+											.opt_inner {
+												background-image: url('../doll/base/eyeballs/eyeballs2-min.png');
+												&:after {
+													background-image: url('../doll/base/eyelids/eyelids2-min.png');
+												}
+											}
+										}
+										&.opt-eyes3 {
+											.opt_inner {
+												background-image: url('../doll/base/eyeballs/eyeballs3-min.png');
+												&:after {
+													background-image: url('../doll/base/eyelids/eyelids3-min.png');
+												}
+											}
+										}
+										&.opt-eyes4 {
+											.opt_inner {
+												background-image: url('../doll/base/eyeballs/eyeballs4-min.png');
+												&:after {
+													background-image: url('../doll/base/eyelids/eyelids4-min.png');
+												}
+											}
+										}
+										
+
+									}
+								}
+							}
+
+							&.hand {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 150%;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: 2% 70%;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
+												background-size: 150%;
+												background-repeat: no-repeat;
+												background-position: 2% 70%;
+												opacity: 0.3;
+											}
+										}
+
+										&.opt-hands0 {
+											.opt_inner {
+												background-image: url('../doll/base/hand/hand0-min.png');
+												&:after {
+													background-image: url('../doll/base/arm/arm0-min.png');
+												}
+											}
+										}
+										&.opt-hands1 {
+											.opt_inner {
+												background-image: url('../doll/base/hand/hand1-min.png');
+												&:after {
+													background-image: url('../doll/base/arm/arm0-min.png');
+												}
+											}
+										}
+										&.opt-hands2 {
+											.opt_inner {
+												background-image: url('../doll/base/hand/hand2-min.png');
+												&:after {
+													background-image: url('../doll/base/arm/arm0-min.png');
+												}
+											}
+										}
+										&.opt-hands3 {
+											.opt_inner {
+												background-image: url('../doll/base/hand/hand3-min.png');
+												&:after {
+													background-image: url('../doll/base/arm/arm0-min.png');
+												}
+											}
+										}
+										
+
+									}
+								}
+							}
+
+							&.jawline {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 150%;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: 50% 25%;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
+												background-size: 150%;
+												background-repeat: no-repeat;
+												background-position: 50% 25%;
+												opacity: 0.3;
+											}
+										}
+
+										&.opt-jawline0 {
+											.opt_inner {
+												background-image: url('../doll/base/jawline/jawline0-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png')
+												}
+											}
+										}
+										&.opt-jawline1 {
+											.opt_inner {
+												background-image: url('../doll/base/jawline/jawline1-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+										&.opt-jawline2 {
+											.opt_inner {
+												background-image: url('../doll/base/jawline/jawline2-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+										&.opt-jawline3 {
+											.opt_inner {
+												background-image: url('../doll/base/jawline/jawline3-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+
+										&.opt-jawline4 {
+											.opt_inner {
+												background-image: url('../doll/base/jawline/jawline4-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+
+									}
+								}
+							}
+
+							&.mouth {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 390%;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: 40% 44%;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
+												background-size: 390%;
+												background-repeat: no-repeat;
+												background-position: 40% 44%;
+												opacity: 1;
+											}
+										}
+
+										&.opt-mouth0 {
+											.opt_inner {
+												background-image: url('../doll/base/mouth/mouth0-min.png');
+												&:after {
+													background-image: url('../doll/base/mouthlips/mouthlips0-min.png');
+												}
+											}
+										}
+										&.opt-mouth1 {
+											.opt_inner {
+												background-image: url('../doll/base/mouth/mouth1-min.png');
+												&:after {
+													background-image: url('../doll/base/mouthlips/mouthlips1-min.png');
+												}
+											}
+										}
+										&.opt-mouth2 {
+											.opt_inner {
+												background-image: url('../doll/base/mouth/mouth2-min.png');
+												&:after {
+													background-image: url('../doll/base/mouthlips/mouthlips2-min.png');
+												}
+											}
+										}
+										&.opt-mouth3 {
+											.opt_inner {
+												background-image: url('../doll/base/mouth/mouth3-min.png');
+												&:after {
+													background-image: url('../doll/base/mouthlips/mouthlips3-min.png');
+												}
+											}
+										}
+										&.opt-mouth4 {
+											.opt_inner {
+												background-image: url('../doll/base/mouth/mouth4-min.png');
+												&:after {
+													background-image: url('../doll/base/mouthlips/mouthlips4-min.png');
+												}
+											}
+										}
+										
+
+									}
+								}
+							}
+
+							&.nose {
+								.options_variants {
+									.opt {
+										.opt_inner {
+											background-size: 305%;
+											background-repeat: no-repeat;
+											position: relative;
+											background-position: 35% 34%;
+
+											&:after {
+												position: absolute;
+												content: "";
+												display: block;
+												width: 100%;
+												height: 100%;
+												background-size: 305%;
+												background-repeat: no-repeat;
+												background-position: 35% 34%;
+												opacity: 0.3;
+											}
+										}
+
+										&.opt-nose0 {
+											.opt_inner {
+												background-image: url('../doll/base/nose/nose0-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png')
+												}
+											}
+										}
+										&.opt-nose1 {
+											.opt_inner {
+												background-image: url('../doll/base/nose/nose1-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+										&.opt-nose2 {
+											.opt_inner {
+												background-image: url('../doll/base/nose/nose2-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+										&.opt-nose3 {
+											.opt_inner {
+												background-image: url('../doll/base/nose/nose3-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+
+										&.opt-nose4 {
+											.opt_inner {
+												background-image: url('../doll/base/nose/nose4-min.png');
+												&:after {
+													background-image: url('../doll/base/base-min.png');
+
+												}
+											}
+										}
+
+									}
+								}
+							}
+
+						}
+					}
+					.nav {
+						width: 100%;
+						padding: 0 50px 25px;
+						box-sizing: border-box;
+
+						.nav_inner {
+							font-family: $euphoria;
+							display: flex;
+							box-sizing: border-box;
+							flex-direction: row;
+							justify-content: center;
+							.nav_btn {
+								position: absolute;
+								top: 35%;
+								background-color:  $pink;
+								border-radius: 100%;
+								padding: 5px;
+								width: 35px;
+								height: 35px;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								transition: $ease;
+
+								&:hover {
+									transform: $hovergrow;
+								}
+
+								div {
+									text-decoration: none;
+									color: white;
+									font-size: 30px;
+									cursor: pointer;
+								}
+								&.prev {
+									left: 10px;
+								}
+
+								&.next {
+									right: 10px;
+								}
+								&.disabled {
+									opacity: 0.5;
+									transform: unset;
 
 									div {
-										text-decoration: none;
-										color: white;
-										font-size: 30px;
-										cursor: pointer;
-									}
-									&.prev {
-										left: 10px;
+										cursor: default;
 									}
 
-									&.next {
-										right: 10px;
+								}
+							}
+							.opt_toggle {
+								display: flex;
+								justify-content: space-between;
+								align-items: center;
+
+								.toggler_type {
+									font-family: $euphoria;
+									color: $deeppink;
+									font-size: 22px;
+									transition: transform ease 0.2s;
+									&.toggler_type_opts {
+										margin-right: 10px;
 									}
-									&.disabled {
-										opacity: 0.5;
-										transform: unset;
-
-										div {
-											cursor: default;
-										}
-
+									&.toggler_type_colours {
+										margin-left: 10px;
 									}
 								}
-								.opt_toggle {
+								.toggler {
+									width: 60px;
+									height: 40px;
+									padding: 2px 4px;
 									display: flex;
-									justify-content: space-between;
+									border-radius: 100px;
+									background-color: rgba(208, 82, 179, 0.4);
 									align-items: center;
 
-									.toggler_type {
-										font-family: $euphoria;
-										color: $deeppink;
-										font-size: 22px;
+									.toggler_inner {
+										width: 36px;
+										display: block;
+										height: 36px;
+										background-color: white;
+										border-radius: 100%;
+										cursor: pointer;
 										transition: transform ease 0.2s;
+									}
+								}
+								&.variants_active {
+									.toggler_type {
 										&.toggler_type_opts {
-											margin-right: 10px;
-										}
-										&.toggler_type_colours {
-											margin-left: 10px;
-										}
-									}
-									.toggler {
-										width: 60px;
-										height: 40px;
-										padding: 2px 4px;
-										display: flex;
-										border-radius: 100px;
-										background-color: rgba(208, 82, 179, 0.4);
-										align-items: center;
-
-										.toggler_inner {
-											width: 36px;
-											display: block;
-											height: 36px;
-											background-color: white;
-											border-radius: 100%;
-											cursor: pointer;
-											transition: transform ease 0.2s;
-										}
-									}
-									&.variants_active {
-										.toggler_type {
-											&.toggler_type_opts {
 												//font-size: 26px;
 												transform: scale(1.2);
 												text-shadow: $glow;
@@ -1283,9 +1345,10 @@ html {
 							}
 						}
 					}
-
 				}
+
 			}
 		}
 	}
+}
 }

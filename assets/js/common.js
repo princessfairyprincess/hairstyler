@@ -19,6 +19,28 @@ $( document ).ready(function() {
 		}
 	}
 
+	//Switch between doll customizer and hairstyler
+
+	const dollSwitch = $('.doll_link');
+	const hairSwitch = $('.hair_link');
+	const controls = $('.controls');
+
+	dollSwitch.click(function() {
+		if ($(hairSwitch).hasClass('active') && $(controls).hasClass('hair_active')) {
+			controls.removeClass('hair_active').addClass('doll_active');
+			dollSwitch.addClass('active');
+			hairSwitch.removeClass('active');
+		}
+	});
+
+	hairSwitch.click(function() {
+		if ($(dollSwitch).hasClass('active') && $(controls).hasClass('doll_active')) {
+			controls.removeClass('doll_active').addClass('hair_active');
+			hairSwitch.addClass('active');
+			dollSwitch.removeClass('active');
+		}
+	});
+
 
 	//Change colour function
 
