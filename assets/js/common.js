@@ -23,95 +23,44 @@ $( document ).ready(function() {
 	}
 
 
-	//Change skin tone
-	const skinOptsArray = $('.active .col-skin');
-	changeSkinTone = function() {
-		let skin = $('.skin');
+	//Change colour function
+
+	changeColour = function(colouropts,colourobj,object) {
+		let optsArray = $('.'+colouropts);
+		let colourObject = '.'+colourobj;
 		let foundInt;
 		let x;
-		for(x = 0; x <= 11; x++){
-			if(skinOptsArray[x] == this){
+		for(x = 0; x <= 11; x++) {
+			if(optsArray[x] == object) {
 				foundInt = x;
 			}
 		}
-		
 		let i;
-		for (i = 0; i <= 11; i++) {
-		
-			$('.skin').removeClass('skin'+[i]).addClass('skin'+foundInt);
-			$('.mouthlips').removeClass('lipshade'+[i]).addClass('lipshade'+foundInt);
-		}
+		for (i = 0; i<=11; i++) {
+			$(colourObject).removeClass(colourobj+[i]).addClass(colourobj+foundInt);
 
-	}
-
-	$('.col-skin').click(changeSkinTone);
-
-	//Change base hair colour
-	const hairOptsArray = $('.col-hairs');
-	changeHairCol = function() {
-		let hair = $('.haircol');
-		let foundInt;
-		let x;
-		for(x = 0; x <= 11; x++){
-			if(hairOptsArray[x] == this){
-				foundInt = x;
+			if ($(colourObject).hasClass('skin')) {
+				$('.mouthlips').removeClass('lipshade'+[i]).addClass('lipshade'+foundInt);
 			}
 		}
-		
-		let i;
-		for (i = 0; i <= 11; i++) {
-		
-			$('.haircol').removeClass('haircol'+[i]).addClass('haircol'+foundInt);
-		}
-
 	}
 
-	$('.col-hairs').click(changeHairCol);
+	$('.col-skin').click(function() {
+		changeColour('col-skin','skin',this);
+	});
 
-	//Change eye colour
-	const eyeOptsArray = $('.col-eyes');
-	changeEyeCol = function() {
-		let eyes = $('.eyecol');
-		let foundInt;
-		let x;
-		for(x = 0; x <= 11; x++){
-			if(eyeOptsArray[x] == this){
-				foundInt = x;
-			}
-		}
-		
-		let i;
-		for (i = 0; i <= 11; i++) {
-		
-			$('.eyecol').removeClass('eyecol'+[i]).addClass('eyecol'+foundInt);
-		}
+	$('.col-shirt').click(function() {
+		changeColour('col-shirt','shirtcol',this);
+	});
 
-	}
+	$('.col-eyes').click(function() {
+		changeColour('col-eyes','eyecol',this);
+	});
 
-	$('.col-eyes').click(changeEyeCol);
+	$('.col-hairs').click(function() {
+		changeColour('col-hairs','haircol',this);
+	});
 
-	//Change shirt colour
-	//TODO: more elegant colour switcher
-	const shirtOptsArray = $('.col-shirt');
-	changeShirtCol = function() {
-		let shirts = $('.shirtcol');
-		let foundInt;
-		let x;
-		for(x = 0; x <= 11; x++){
-			if(shirtOptsArray[x] == this){
-				foundInt = x;
-			}
-		}
-		
-		let i;
-		for (i = 0; i <= 11; i++) {
-		
-			$('.shirtcol').removeClass('shirtcol'+[i]).addClass('shirtcol'+foundInt);
-		}
-
-	}
-
-	$('.col-shirt').click(changeShirtCol);
 
 
  	//Change parts
@@ -122,10 +71,6 @@ $( document ).ready(function() {
 		let partOpt = '.'+part;
 		let foundInt;
 		let x;
-
-		console.log(partOpt);
-		console.log('-------');
-		console.log(partsOptsArray);
 
 		for(x = 0; x <= partOptsQuant; x++){
 			if(partsOptsArray[x] == object) {
