@@ -846,6 +846,57 @@
 			}
 		}
 
+		&.shirtcol {
+			//transition: filter linear 0.1s;
+			&.shirtcol0 {
+				filter: unset;
+			}
+
+			&.shirtcol1 {
+				filter: hue-rotate(122deg) brightness(1.3) contrast(0.9) saturate(1.1);
+			}
+
+			&.shirtcol2 {
+				filter: hue-rotate(86deg) brightness(0.9) contrast(1) saturate(1.4);
+			}
+
+			&.shirtcol3 {
+				filter: hue-rotate(137deg) brightness(0.6) contrast(1) saturate(1.5);
+			}
+
+			&.shirtcol4 {
+				filter: hue-rotate(144deg) brightness(1.3) contrast(0.9) saturate(1.1);
+			}
+
+			&.shirtcol5 {
+				filter: hue-rotate(220deg) brightness(1.5) contrast(1) saturate(1.1);
+			}
+
+			&.shirtcol6 {
+				filter: hue-rotate(201deg) brightness(1.8) contrast(0.9) saturate(0.4);
+			}
+
+			&.shirtcol7 {
+				filter: hue-rotate(154deg) brightness(2.4) contrast(1.2) saturate(0.6);
+			}
+
+			&.shirtcol8 {
+				filter: hue-rotate(47deg) brightness(0.6) contrast(1) saturate(1.7);
+			}
+
+			&.shirtcol9 {
+				filter: hue-rotate(49deg) brightness(1.2) contrast(1) saturate(0.1);
+			}
+
+			&.shirtcol10 {
+				filter: hue-rotate(49deg) brightness(0.5) contrast(1) saturate(0.2);
+			}
+
+			&.shirtcol11 {
+				filter: hue-rotate(49deg) brightness(2.5) contrast(0.95) saturate(0.2);
+			} 
+		}
+
 		
 	}
 }

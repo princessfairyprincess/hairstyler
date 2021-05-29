@@ -75,10 +75,8 @@ $( document ).ready(function() {
 		let foundInt;
 		let x;
 		for(x = 0; x <= 11; x++){
-			console.log(eyeOptsArray[x]);
 			if(eyeOptsArray[x] == this){
 				foundInt = x;
-				console.log(foundInt);
 			}
 		}
 		
@@ -91,6 +89,29 @@ $( document ).ready(function() {
 	}
 
 	$('.col-eyes').click(changeEyeCol);
+
+	//Change shirt colour
+	//TODO: more elegant colour switcher
+	const shirtOptsArray = $('.col-shirt');
+	changeShirtCol = function() {
+		let shirts = $('.shirtcol');
+		let foundInt;
+		let x;
+		for(x = 0; x <= 11; x++){
+			if(shirtOptsArray[x] == this){
+				foundInt = x;
+			}
+		}
+		
+		let i;
+		for (i = 0; i <= 11; i++) {
+		
+			$('.shirtcol').removeClass('shirtcol'+[i]).addClass('shirtcol'+foundInt);
+		}
+
+	}
+
+	$('.col-shirt').click(changeShirtCol);
 
 
  	//Change parts
