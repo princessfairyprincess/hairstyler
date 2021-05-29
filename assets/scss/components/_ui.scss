@@ -39,13 +39,11 @@ html {
 	overflow-x: hidden;
 
 	body {
-		//background: radial-gradient(circle, #ffe0ee 0%, #d9d1f7 100%);
-	    //background: url("../img/bg/FlyingElves.webm");
 	    margin: 0;
 	    box-sizing: border-box;
-	    //padding-bottom: 56.25%;
 	    position: relative;
 	    font-family: $euphoria;
+	    height: 100vh;
 	    .background-vid {
 	    	position: fixed;
 	    	z-index: -1;
@@ -60,11 +58,12 @@ html {
 			//background-color: #fff;
 			margin: 0 auto 4em;
 			max-width: 980px;
-			min-height: 825px;
+			min-height: 750px;
 			display: flex;
 			flex-direction: row;
 			box-sizing: border-box;
 			padding: 2em;
+			max-height: 100%;
 			.left {
 				width: 36%;
 				position: relative;
@@ -200,7 +199,7 @@ html {
 						.top {
 							display: block;
 							height: fit-content;
-							padding-top: 110px;
+							padding-top: 80px;
 							position: relative;
 							.sections {
 								position: absolute;
@@ -232,7 +231,7 @@ html {
 								}
 							}
 							.categs {
-								padding: 50px;
+								padding: 50px 50px 35px;
 								.categs_grid {
 									display: grid;
 									grid-template-columns: repeat(6, 1fr);
@@ -274,7 +273,7 @@ html {
 							.options_outer {
 								width: 100%;
 								.options {
-									padding: 50px;
+									padding: 5px 50px;
 									width: 190%;
 									display: flex;
 									flex-direction: row;
@@ -328,6 +327,7 @@ html {
 									}
 
 									.options_colours {
+										padding: 15px 0 25px;
 										.opts_colours_inner {
 											display: grid;
 											grid-template-columns: repeat(6, 1fr);
