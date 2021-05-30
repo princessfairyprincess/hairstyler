@@ -39,22 +39,22 @@ html {
 	overflow-x: hidden;
 
 	body {
-	    margin: 0;
-	    box-sizing: border-box;
-	    position: relative;
-	    font-family: $euphoria;
-	    height: 100vh;
-	    .background-vid {
-	    	position: fixed;
-	    	z-index: -1;
-	    	video {
-	    		width: 100vw;
-	    		height: 100vh;
-	    		object-fit: cover;
-	    		opacity: 0.8;
-	    	}
-	    }
-	    .main {
+		margin: 0;
+		box-sizing: border-box;
+		position: relative;
+		font-family: $euphoria;
+		height: 100vh;
+		.background-vid {
+			position: fixed;
+			z-index: -1;
+			video {
+				width: 100vw;
+				height: 100vh;
+				object-fit: cover;
+				opacity: 0.8;
+			}
+		}
+		.main {
 			//background-color: #fff;
 			margin: 0 auto 4em;
 			max-width: 980px;
@@ -266,14 +266,14 @@ html {
 								}
 
 								&.haircategs {
-										.categs_grid {
-											grid-template-columns: repeat(4, 1fr);
-											.categ {
-												width: 95px;
-												height: 95px;
-											}
+									.categs_grid {
+										grid-template-columns: repeat(4, 1fr);
+										.categ {
+											width: 85px;
+											height: 85px;
 										}
 									}
+								}
 							}
 						}
 
@@ -283,6 +283,1061 @@ html {
 							background-color: rgba(255, 148, 204, 0.3);
 							.options_outer {
 								width: 100%;
+								&.hair_options {
+									.options {
+										&.hairbottomside {
+											.options_variants {
+												.opt {
+													.opt_inner {
+														background-size: 90%;
+														background-repeat: no-repeat;
+														position: relative;
+														background-position: 50% 20%;
+														mix-blend-mode: darken;
+														background-image: url('../img/misc/mannequin.png');
+														filter: brightness(1.5) saturate(0.7) contrast(0.8);
+														opacity: 1;
+
+														&:after {
+															position: absolute;
+															content: "";
+															display: block;
+															width: 100%;
+															height: 100%;
+															background-size: 90%;
+															background-repeat: no-repeat;
+															background-position: 50% 20%;
+															opacity: 1;
+															mix-blend-mode: darken;
+															filter: hue-rotate(248deg);
+														}
+													}
+
+													&.opt-hairbottomside0 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside1 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/boxbraids_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside2 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/coils_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside3 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/cornrowbase_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside4 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/pinnedback_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside5 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/pinnedback_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside6 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/shavedpattern1_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside7 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/shavedpattern2_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside8 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/fluffywaves_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside9 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/smallcornrows_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside10 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/waterwave_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside11 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside12 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside13 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairbottomside14 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+															}
+														}
+													}
+												}
+											}
+										}
+										&.hairtopside {
+											.options_variants {
+												.opt {
+													.opt_inner {
+														background-size: 90%;
+														background-repeat: no-repeat;
+														position: relative;
+														background-position: 50% 20%;
+														mix-blend-mode: darken;
+														background-image: url('../img/misc/mannequin.png');
+														filter: brightness(1.5) saturate(0.7) contrast(0.8);
+														opacity: 1;
+
+														&:after {
+															position: absolute;
+															content: "";
+															display: block;
+															width: 100%;
+															height: 100%;
+															background-size: 90%;
+															background-repeat: no-repeat;
+															background-position: 50% 20%;
+															opacity: 1;
+															mix-blend-mode: darken;
+															filter: hue-rotate(248deg);
+														}
+													}
+
+													&.opt-hairtopside0 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/afro_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside1 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/boxbraids_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside2 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/coils_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside3 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/cornrowbase_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside4 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/pinnedback_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside5 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/shaved_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside6 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/shavedpattern1_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside7 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/shavedpattern2_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside8 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/fluffywaves_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside9 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/smallcornrows_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside10 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/waterwave_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside11 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/afro_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside12 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/afro_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside13 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/afro_topside-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtopside14 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/topside/afro_topside-min.png');
+															}
+														}
+													}
+												}
+											}
+										}
+										&.hairtop {
+											.options_variants {
+												.opt {
+													.opt_inner {
+														background-size: 90%;
+														background-repeat: no-repeat;
+														position: relative;
+														background-position: 50% 20%;
+														mix-blend-mode: darken;
+														background-image: url('../img/misc/mannequin.png');
+														filter: brightness(1.5) saturate(0.7) contrast(0.8);
+														opacity: 1;
+
+														&:after {
+															position: absolute;
+															content: "";
+															display: block;
+															width: 100%;
+															height: 100%;
+															background-size: 90%;
+															background-repeat: no-repeat;
+															background-position: 50% 20%;
+															opacity: 1;
+															mix-blend-mode: darken;
+															filter: hue-rotate(248deg);
+														}
+													}
+
+													&.opt-hairtop0 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/afro_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop1 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/boxbraids_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop2 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/coils_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop3 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/cornrowbase_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop4 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/pinnedback_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop5 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/shaved_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop6 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/shavedpattern1_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop7 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/shavedpattern2_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop8 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/fluffywaves_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop9 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/smallcornrows_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop10 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/waterwave_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop11 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/afro_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop12 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/afro_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop13 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/afro_top-min.png');
+															}
+														}
+													}
+
+													&.opt-hairtop14 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/top/afro_top-min.png');
+															}
+														}
+													}
+												}
+											}
+										}
+										&.hairfront {
+											.options_variants {
+												.opt {
+													.opt_inner {
+														background-size: 90%;
+														background-repeat: no-repeat;
+														position: relative;
+														background-position: 50% 20%;
+														mix-blend-mode: darken;
+														background-image: url('../img/misc/mannequin.png');
+														filter: brightness(1.5) saturate(0.7) contrast(0.8);
+														opacity: 1;
+
+														&:after {
+															position: absolute;
+															content: "";
+															display: block;
+															width: 100%;
+															height: 100%;
+															background-size: 90%;
+															background-repeat: no-repeat;
+															background-position: 50% 20%;
+															opacity: 1;
+															mix-blend-mode: darken;
+															filter: hue-rotate(248deg);
+														}
+													}
+
+													&.opt-hairfront0 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/afro_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront1 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/boxbraids_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront2 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/coils_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront3 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/cornrowbase_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront4 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/pinnedback_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront5 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/shaved_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront6 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/shavedpattern1_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront7 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/shavedpattern2_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront8 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/fluffywaves_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront9 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/smallcornrows_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront10 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/waterwave_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront11 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/afro_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront12 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/afro_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront13 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/afro_front-min.png');
+															}
+														}
+													}
+
+													&.opt-hairfront14 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/front/afro_front-min.png');
+															}
+														}
+													}
+												}
+											}
+										}
+										&.hairback {
+											.options_variants {
+												.opt {
+													.opt_inner {
+														background-size: 90%;
+														background-repeat: no-repeat;
+														position: relative;
+														background-position: 50% 20%;
+														mix-blend-mode: darken;
+														background-image: url('../img/misc/mannequin.png');
+														filter: brightness(1.5) saturate(0.7) contrast(0.8);
+														opacity: 1;
+
+														&:after {
+															position: absolute;
+															content: "";
+															display: block;
+															width: 100%;
+															height: 100%;
+															background-size: 90%;
+															background-repeat: no-repeat;
+															background-position: 50% 20%;
+															opacity: 1;
+															mix-blend-mode: darken;
+															filter: hue-rotate(248deg);
+														}
+													}
+
+													&.opt-hairback0 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/afro_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback1 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/boxbraids_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback2 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/coils_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback3 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/cornrowbase_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback4 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/pinnedback_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback5 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/shaved_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback6 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/shavedpattern1_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback7 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/shavedpattern2_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback8 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/fluffywaves_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback9 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/smallcornrows_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback10 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/waterwave_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback11 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/afro_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback12 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/afro_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback13 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/afro_back-min.png');
+															}
+														}
+													}
+
+													&.opt-hairback14 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/back/afro_back-min.png');
+															}
+														}
+													}
+												}
+											}
+										}
+										&.hairacc {
+											.options_variants {
+												.opt {
+													.opt_inner {
+														background-size: 90%;
+														background-repeat: no-repeat;
+														position: relative;
+														background-position: 50% 20%;
+														mix-blend-mode: darken;
+														background-image: url('../img/misc/mannequin.png');
+														filter: brightness(1.5) saturate(0.7) contrast(0.8);
+														opacity: 1;
+
+														&:after {
+															position: absolute;
+															content: "";
+															display: block;
+															width: 100%;
+															height: 100%;
+															background-size: 90%;
+															background-repeat: no-repeat;
+															background-position: 50% 20%;
+															opacity: 1;
+															mix-blend-mode: darken;
+															filter: hue-rotate(248deg);
+														}
+													}
+
+													&.opt-hairacc0 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/afro_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc1 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/boxbraids_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc2 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/coils_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc3 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/cornrowbase_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc4 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/pinnedback_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc5 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/shaved_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc6 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/shavedpattern1_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc7 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/shavedpattern2_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc8 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/fluffywaves_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc9 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/smallcornrows_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc10 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/waterwave_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc11 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/afro_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc12 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/afro_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc13 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/afro_acc-min.png');
+															}
+														}
+													}
+
+													&.opt-hairacc14 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/acc/afro_acc-min.png');
+															}
+														}
+													}
+												}
+											}
+										}
+										&.hairpieces {
+											.options_variants {
+												.opt {
+													.opt_inner {
+														background-size: 90%;
+														background-repeat: no-repeat;
+														position: relative;
+														background-position: 50% 20%;
+														mix-blend-mode: darken;
+														background-image: url('../img/misc/mannequin.png');
+														filter: brightness(1.5) saturate(0.7) contrast(0.8);
+														opacity: 1;
+
+														&:after {
+															position: absolute;
+															content: "";
+															display: block;
+															width: 100%;
+															height: 100%;
+															background-size: 90%;
+															background-repeat: no-repeat;
+															background-position: 50% 20%;
+															opacity: 1;
+															mix-blend-mode: darken;
+															filter: hue-rotate(248deg);
+														}
+													}
+
+													&.opt-hairpieces0 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/afro_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces1 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/boxbraids_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces2 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/coils_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces3 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/cornrowbase_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces4 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/pinnedback_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces5 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/shaved_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces6 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/shavedpattern1_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces7 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/shavedpattern2_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces8 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/fluffywaves_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces9 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/smallcornrows_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces10 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/waterwave_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces11 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/afro_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces12 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/afro_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces13 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/afro_pieces-min.png');
+															}
+														}
+													}
+
+													&.opt-hairpieces14 {
+														.opt_inner {
+															&:after {
+																background-image: url('../doll/hair/pieces/afro_pieces-min.png');
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									
+								}
 								.options {
 									padding: 5px 50px;
 									width: 190%;
@@ -568,6 +1623,8 @@ html {
 										}
 									}
 								}
+
+								
 							}
 
 							&.body {
