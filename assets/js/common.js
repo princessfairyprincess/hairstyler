@@ -122,6 +122,16 @@ $( document ).ready(function() {
 			if ($(object).hasClass('opt-mouth')) {
 				$('.mouthlips').removeClass('mouthlips'+[i]).addClass('mouthlips'+foundInt);
 			}
+
+			if ($(object).hasClass('opt-hairbottomside')) {
+				$('.headwrap').addClass('hide');
+				$('.hairpart').removeClass('hide');
+			}
+
+			if ($(object).hasClass('hair-optbtn')) {
+				$('.headwrap').addClass('hide');
+				$('.hairpart').removeClass('hide');
+			}
 		}
 
 		$(object).siblings().removeClass('active');
@@ -187,6 +197,14 @@ $( document ).ready(function() {
 
 	$('.opt-shirt').click(function() {
 		changeVariant('opt-shirt','shirt',this);
+	});
+
+	$('.opt-hairbottomside').click(function() {
+		changeVariant('opt-hairbottomside','hairbottomside',this);
+	});
+
+	$('.opt-hairtopside').click(function() {
+		changeVariant('opt-hairtopside','hairtopside',this);
 	});
 
 
@@ -285,6 +303,14 @@ $( document ).ready(function() {
 
 	$('#categShirt').click(function() {
 		changeCateg(this,'shirt');
+	});
+
+	$('#categHairBottomSide').click(function() {
+		changeCateg(this,'hairbottomside');
+	});
+
+	$('#categHairTopSide').click(function() {
+		changeCateg(this,'hairtopside');
 	});
 
 });

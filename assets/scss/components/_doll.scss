@@ -764,6 +764,8 @@
 			}
 		}
 
+		//shirtcol
+
 		&.shirtcol {
 			//transition: filter linear 0.1s;
 			&.shirtcol0 {
@@ -815,6 +817,56 @@
 			} 
 		}
 
-		
+		//hairparts
+
+		&.hairpart {
+			&.hairbottomside {
+				&.hairbottomside0 {
+					background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+				}
+				&.hairbottomside1 {
+					background-image: url('../doll/hair/bottomside/boxbraids_bottomside-min.png');
+				}
+				&.hairbottomside2 {
+					background-image: url('../doll/hair/bottomside/coils_bottomside-min.png');
+				}
+				&.hairbottomside3 {
+					background-image: url('../doll/hair/bottomside/cornrowbase_bottomside-min.png');
+				}
+				&.hairbottomside4 {
+					background-image: url('../doll/hair/bottomside/pinnedback_bottomside-min.png');
+				}
+				&.hairbottomside5 {
+					background-image: url('../doll/hair/bottomside/pinnedback_bottomside-min.png');
+				}
+				&.hairbottomside6 {
+					background-image: url('../doll/hair/bottomside/shavedpattern1_bottomside-min.png');
+				}
+				&.hairbottomside7 {
+					background-image: url('../doll/hair/bottomside/shavedpattern2_bottomside-min.png');
+				}
+				&.hairbottomside8 {
+					background-image: url('../doll/hair/bottomside/fluffywaves_bottomside-min.png');
+				}
+				&.hairbottomside9 {
+					background-image: url('../doll/hair/bottomside/smallcornrows_bottomside-min.png');
+				}
+				&.hairbottomside10 {
+					background-image: url('../doll/hair/bottomside/waterwave_bottomside-min.png');
+				}
+				&.hairbottomside11 {
+					background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+				}
+				&.hairbottomside12 {
+					background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+				}
+				&.hairbottomside13 {
+					background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+				}
+				&.hairbottomside14 {
+					background-image: url('../doll/hair/bottomside/afro_bottomside-min.png');
+				}
+			}
+		}		
 	}
 }
