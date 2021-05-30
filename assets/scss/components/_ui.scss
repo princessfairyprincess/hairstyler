@@ -180,6 +180,7 @@ html {
 					position: relative;
 					box-sizing: border-box;
 					overflow: hidden;
+					transition: $ease;
 					
 					&.doll_active {
 						transform: translateX(0);
@@ -263,6 +264,16 @@ html {
 									}
 
 								}
+
+								&.haircategs {
+										.categs_grid {
+											grid-template-columns: repeat(4, 1fr);
+											.categ {
+												width: 95px;
+												height: 95px;
+											}
+										}
+									}
 							}
 						}
 
