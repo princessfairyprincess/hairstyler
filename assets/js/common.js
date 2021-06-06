@@ -207,6 +207,14 @@ $( document ).ready(function() {
 		changeVariant('opt-hairtopside','hairtopside',this);
 	});
 
+	$('.opt-hairtop').click(function() {
+		changeVariant('opt-hairtop','hairtop',this);
+	});
+
+	$('.opt-hairfront').click(function() {
+		changeVariant('opt-hairfront','hairfront',this);
+	});
+
 
 	//Choose Category
 	changeCateg = function(categbutton,categoption) {
@@ -311,6 +319,14 @@ $( document ).ready(function() {
 
 	$('#categHairTopSide').click(function() {
 		changeCateg(this,'hairtopside');
+	});
+
+	$('#categHairTop').click(function() {
+		changeCateg(this,'hairtop');
+	});
+
+	$('#categHairFront').click(function() {
+		changeCateg(this,'hairfront');
 	});
 
 });
