@@ -95,6 +95,13 @@ $( document ).ready(function() {
 		changeColour('col-hairs','haircol',this);
 	});
 
+	$('.col-hairbottomside').click(function() {
+		changeColour('col-hairsbottom','haircolbottom',this);
+	});
+
+	$('.col-hairtopside').click(function() {
+		changeColour('col-hairstopside','haircoltopside',this);
+	});
 
 
  	//Change parts
