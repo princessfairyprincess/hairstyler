@@ -24,18 +24,20 @@ $( document ).ready(function() {
 	const dollSwitch = $('.doll_link');
 	const hairSwitch = $('.hair_link');
 	const controls = $('.controls');
+	const nav = $('#navi');
 
 	dollSwitch.click(function() {
 		if ($(hairSwitch).hasClass('active') && $(controls).hasClass('hair_active')) {
 			controls.removeClass('hair_active').addClass('doll_active');
 			dollSwitch.addClass('active');
 			hairSwitch.removeClass('active');
+			$('#dollcontrols_bottom').append(nav);
 		}
 		if ($(optViewer).hasClass('colours_active_view')){
-			optViewer.removeClass('colours_active_view').addClass('variants_active_view');
+			$(optViewer).removeClass('colours_active_view').addClass('variants_active_view');
 		}
 		if ($(optColState).hasClass('colors_active')){
-			optViewer.removeClass('colors_active').addClass('variants_active');
+			$(optColState).removeClass('colors_active').addClass('variants_active');
 		}
 	});
 
@@ -44,6 +46,13 @@ $( document ).ready(function() {
 			controls.removeClass('doll_active').addClass('hair_active');
 			hairSwitch.addClass('active');
 			dollSwitch.removeClass('active');
+			$('#haircontrols_bottom').append(nav);
+		}
+		if ($(optViewer).hasClass('colours_active_view')){
+			$(optViewer).removeClass('colours_active_view').addClass('variants_active_view');
+		}
+		if ($(optColState).hasClass('colors_active')){
+			$(optColState).removeClass('colors_active').addClass('variants_active');
 		}
 	});
 
