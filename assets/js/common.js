@@ -31,6 +31,12 @@ $( document ).ready(function() {
 			dollSwitch.addClass('active');
 			hairSwitch.removeClass('active');
 		}
+		if ($(optViewer).hasClass('colours_active_view')){
+			optViewer.removeClass('colours_active_view').addClass('variants_active_view');
+		}
+		if ($(optColState).hasClass('colors_active')){
+			optViewer.removeClass('colors_active').addClass('variants_active');
+		}
 	});
 
 	hairSwitch.click(function() {
@@ -215,6 +221,10 @@ $( document ).ready(function() {
 		changeVariant('opt-hairfront','hairfront',this);
 	});
 
+	$('.opt-hairback').click(function() {
+		changeVariant('opt-hairback','hairback',this);
+	});
+
 
 	//Choose Category
 	changeCateg = function(categbutton,categoption) {
@@ -327,6 +337,10 @@ $( document ).ready(function() {
 
 	$('#categHairFront').click(function() {
 		changeCateg(this,'hairfront');
+	});
+
+	$('#categHairBack').click(function() {
+		changeCateg(this,'hairback');
 	});
 
 });
