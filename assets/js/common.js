@@ -103,7 +103,17 @@ $( document ).ready(function() {
 		changeColour('col-hairstopside','haircoltopside',this);
 	});
 
+	$('.col-hairtop').click(function() {
+		changeColour('col-hairstop','haircoltop',this);
+	});
 
+	$('.col-hairfront').click(function() {
+		changeColour('col-hairsfront','haircolfront',this);
+	});
+
+	$('.col-hairback').click(function() {
+		changeColour('col-hairsback','haircolback',this);
+	});
  	//Change parts
 
 	changeVariant = function(partsgroup,part,object) {
