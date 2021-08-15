@@ -434,7 +434,7 @@ html {
 													}
 												}
 											}
-										
+
 										}
 										&.hairtopside {
 											.options_variants {
@@ -1395,6 +1395,61 @@ html {
 
 									.options_colours {
 										padding: 15px 0 25px;
+										position: relative;
+
+										.custom_colours {
+											position: absolute;
+											top: -50px;
+											right: -35px;
+											width: 100%;
+											transition: $ease;
+											 &.closed {
+											 	transform: translateX(65%);
+											 }
+
+											.custom_colours_container {
+												display: flex;
+												align-items: self-start;
+												width: 100%;
+
+												.custom_colour_tab {
+												display: flex;
+												flex-direction: row;
+												background-color: $deeppink;
+												align-items: center;
+												padding:  7px 5px;
+												border-radius: 20px 0 0 20px;
+												box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.2);
+												cursor: pointer;
+												box-sizing: content-box;
+
+												.icon {
+													width: auto;
+													height: 40px;
+													svg {
+														fill: white;
+														width: auto;
+														height: 100%;
+													}
+												}
+												span {
+													color: white;
+													font-size: 25px;
+													padding: 0 14px 3px 0;
+													width: 100%;
+													min-width: max-content;
+												}
+											}
+											.custom_colour_inner {
+												width: 80%;
+												height: 120px;
+												background-color: $deeppink;
+												box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.2);
+												border-radius: 0 0 20px 20px; 
+											}
+											}
+											
+										}
 										.opts_colours_inner {
 											display: grid;
 											grid-template-columns: repeat(6, 1fr);
