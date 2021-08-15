@@ -369,5 +369,12 @@ $( document ).ready(function() {
 		changeCateg(this,'hairback');
 	});
 
+	//CUSTOM COLOUR SECTION
+	//open custom colour tab
+
+	$('.custom_colour_tab').click(function() {
+		$(this).parent().parent().toggleClass('closed open');
+	});
+
 });
 
