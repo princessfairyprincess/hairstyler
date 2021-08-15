@@ -1055,6 +1055,257 @@
 					background-image: url('../doll/hair/back/back_14.png');
 				}
 			}
-		}		
+		}
+
+		//hair cols
+		&.haircolbottom {
+			&.haircolbottom0 {
+				filter: brightness(0.7);
+			}
+
+			&.haircolbottom1 {
+				filter: hue-rotate(20deg) brightness(2.0) saturate(0.5);
+			}
+
+			&.haircolbottom2 {
+				filter: brightness(0.5) contrast(1) saturate(0.2);
+			}
+
+			&.haircolbottom3 {
+				filter: hue-rotate(345deg) brightness(1) contrast(1) saturate(1.4);
+			}
+
+			&.haircolbottom4 {
+				filter: hue-rotate(1deg) brightness(3.3) contrast(1.1) saturate(0.3);
+			}
+
+			&.haircolbottom5 {
+				filter: brightness(1.8) contrast(1.5) saturate(0);
+			}
+
+			&.haircolbottom6 {
+				filter: brightness(1.8) contrast(1) saturate(1);
+			}
+
+			&.haircolbottom7 {
+				filter: unset;
+			}
+
+			&.haircolbottom8 {
+				filter: hue-rotate(-95deg) brightness(1) contrast(1.3) saturate(1.7);
+			}
+
+			&.haircolbottom9 {
+				filter: hue-rotate(200deg) brightness(1.4) contrast(1.3) saturate(1);
+			}
+
+			&.haircolbottom10 {
+				filter: hue-rotate(300deg) brightness(1.5) contrast(1.3) saturate(1.2);
+			}
+
+			&.haircolbottom11 {
+				filter: brightness(3.4) contrast(1.3) saturate(0);
+			} 
+		}	
+
+		&.haircoltopside {
+			&.haircoltopside0 {
+				filter: brightness(0.7);
+			}
+
+			&.haircoltopside1 {
+				filter: hue-rotate(20deg) brightness(2.0) saturate(0.5);
+			}
+
+			&.haircoltopside2 {
+				filter: brightness(0.5) contrast(1) saturate(0.2);
+			}
+
+			&.haircoltopside3 {
+				filter: hue-rotate(345deg) brightness(1) contrast(1) saturate(1.4);
+			}
+
+			&.haircoltopside4 {
+				filter: hue-rotate(1deg) brightness(3.3) contrast(1.1) saturate(0.3);
+			}
+
+			&.haircoltopside5 {
+				filter: brightness(1.8) contrast(1.5) saturate(0);
+			}
+
+			&.haircoltopside6 {
+				filter: brightness(1.8) contrast(1) saturate(1);
+			}
+
+			&.haircoltopside7 {
+				filter: unset;
+			}
+
+			&.haircoltopside8 {
+				filter: hue-rotate(-95deg) brightness(1) contrast(1.3) saturate(1.7);
+			}
+
+			&.haircoltopside9 {
+				filter: hue-rotate(200deg) brightness(1.4) contrast(1.3) saturate(1);
+			}
+
+			&.haircoltopside10 {
+				filter: hue-rotate(300deg) brightness(1.5) contrast(1.3) saturate(1.2);
+			}
+
+			&.haircoltopside11 {
+				filter: brightness(3.4) contrast(1.3) saturate(0);
+			} 
+		}
+
+		&.haircoltop {
+			&.haircoltop0 {
+				filter: brightness(0.7);
+			}
+
+			&.haircoltop1 {
+				filter: hue-rotate(20deg) brightness(2.0) saturate(0.5);
+			}
+
+			&.haircoltop2 {
+				filter: brightness(0.5) contrast(1) saturate(0.2);
+			}
+
+			&.haircoltop3 {
+				filter: hue-rotate(345deg) brightness(1) contrast(1) saturate(1.4);
+			}
+
+			&.haircoltop4 {
+				filter: hue-rotate(1deg) brightness(3.3) contrast(1.1) saturate(0.3);
+			}
+
+			&.haircoltop5 {
+				filter: brightness(1.8) contrast(1.5) saturate(0);
+			}
+
+			&.haircoltop6 {
+				filter: brightness(1.8) contrast(1) saturate(1);
+			}
+
+			&.haircoltop7 {
+				filter: unset;
+			}
+
+			&.haircoltop8 {
+				filter: hue-rotate(-95deg) brightness(1) contrast(1.3) saturate(1.7);
+			}
+
+			&.haircoltop9 {
+				filter: hue-rotate(200deg) brightness(1.4) contrast(1.3) saturate(1);
+			}
+
+			&.haircoltop10 {
+				filter: hue-rotate(300deg) brightness(1.5) contrast(1.3) saturate(1.2);
+			}
+
+			&.haircoltop11 {
+				filter: brightness(3.4) contrast(1.3) saturate(0);
+			} 
+		}
+
+		&.haircolfront {
+			&.haircolfront0 {
+				filter: brightness(0.7);
+			}
+
+			&.haircolfront1 {
+				filter: hue-rotate(20deg) brightness(2.0) saturate(0.5);
+			}
+
+			&.haircolfront2 {
+				filter: brightness(0.5) contrast(1) saturate(0.2);
+			}
+
+			&.haircolfront3 {
+				filter: hue-rotate(345deg) brightness(1) contrast(1) saturate(1.4);
+			}
+
+			&.haircolfront4 {
+				filter: hue-rotate(1deg) brightness(3.3) contrast(1.1) saturate(0.3);
+			}
+
+			&.haircolfront5 {
+				filter: brightness(1.8) contrast(1.5) saturate(0);
+			}
+
+			&.haircolfront6 {
+				filter: brightness(1.8) contrast(1) saturate(1);
+			}
+
+			&.haircolfront7 {
+				filter: unset;
+			}
+
+			&.haircolfront8 {
+				filter: hue-rotate(-95deg) brightness(1) contrast(1.3) saturate(1.7);
+			}
+
+			&.haircolfront9 {
+				filter: hue-rotate(200deg) brightness(1.4) contrast(1.3) saturate(1);
+			}
+
+			&.haircolfront10 {
+				filter: hue-rotate(300deg) brightness(1.5) contrast(1.3) saturate(1.2);
+			}
+
+			&.haircolfront11 {
+				filter: brightness(3.4) contrast(1.3) saturate(0);
+			} 
+		}
+
+		&.haircolback {
+			&.haircolback0 {
+				filter: brightness(0.7);
+			}
+
+			&.haircolback1 {
+				filter: hue-rotate(20deg) brightness(2.0) saturate(0.5);
+			}
+
+			&.haircolback2 {
+				filter: brightness(0.5) contrast(1) saturate(0.2);
+			}
+
+			&.haircolback3 {
+				filter: hue-rotate(345deg) brightness(1) contrast(1) saturate(1.4);
+			}
+
+			&.haircolback4 {
+				filter: hue-rotate(1deg) brightness(3.3) contrast(1.1) saturate(0.3);
+			}
+
+			&.haircolback5 {
+				filter: brightness(1.8) contrast(1.5) saturate(0);
+			}
+
+			&.haircolback6 {
+				filter: brightness(1.8) contrast(1) saturate(1);
+			}
+
+			&.haircolback7 {
+				filter: unset;
+			}
+
+			&.haircolback8 {
+				filter: hue-rotate(-95deg) brightness(1) contrast(1.3) saturate(1.7);
+			}
+
+			&.haircolback9 {
+				filter: hue-rotate(200deg) brightness(1.4) contrast(1.3) saturate(1);
+			}
+
+			&.haircolback10 {
+				filter: hue-rotate(300deg) brightness(1.5) contrast(1.3) saturate(1.2);
+			}
+
+			&.haircolback11 {
+				filter: brightness(3.4) contrast(1.3) saturate(0);
+			} 
+		}
 	}
 }
